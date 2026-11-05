@@ -1,0 +1,45 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><title>Slenderman — Short ≤35 с — обзор кадров (5)</title><style>
+*{box-sizing:border-box}
+body{margin:0;background:#0d0f12;color:#e8eaed;font:15px/1.45 -apple-system,'Segoe UI',Roboto,sans-serif}
+.bar{position:sticky;top:0;z-index:50;background:#14171cdd;backdrop-filter:blur(6px);padding:10px 14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;border-bottom:1px solid #262b33}
+.bar b{font-size:16px}
+.bar button{background:#ffb020;border:0;border-radius:8px;padding:8px 14px;font-weight:700;cursor:pointer;font-size:14px}
+.bar button.ghost{background:#262b33;color:#e8eaed}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px;padding:14px}
+.card{background:#14171c;border:1px solid #262b33;border-radius:12px;padding:10px}
+.card img{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:8px;cursor:zoom-in;display:block;background:#000}
+.bn{font-weight:800;color:#ffb020;margin:8px 0 2px}
+.tx{color:#e8eaed}
+.ru{color:#9aa3ad;font-size:.88em;margin-top:2px}
+textarea.cm{width:100%;margin-top:8px;background:#0d0f12;color:#e8eaed;border:1px solid #333a45;border-radius:8px;padding:7px;font:inherit;resize:vertical}
+textarea.cm.has{border-color:#ffb020}
+#lb{position:fixed;inset:0;background:#000d;display:none;z-index:100;flex-direction:column;align-items:center;justify-content:center;padding:14px}
+#lb.open{display:flex}
+#lb img{max-width:70vw;max-height:74vh;border-radius:10px}
+#lb .cap{color:#ffb020;font-weight:800;margin:10px 0 4px}
+#lb .txl{max-width:900px;text-align:center}
+#lb .rul{color:#9aa3ad;font-size:.9em;max-width:900px;text-align:center}
+#lb textarea{width:min(900px,92vw);margin-top:10px;background:#14171c;color:#e8eaed;border:1px solid #ffb020;border-radius:8px;padding:9px;font:inherit}
+#lb .x{position:absolute;top:10px;right:16px;font-size:30px;color:#fff;cursor:pointer;background:none;border:0}
+</style></head>
+<body>
+<div class="bar"><b>Slenderman — Short ≤35 с — обзор кадров (5)</b><span id="cnt">0 коммент.</span><button onclick="copyAll()">📋 Скопировать все комменты</button><button class="ghost" onclick="clearAll()">Очистить</button></div>
+<div class="grid"><div class="card"><img loading="lazy" src="posters/slenderman-short/slender_b1.jpg?v=20261104" alt="slender_b1" onclick="openLb(this)"><div class="bn">🎬 Beat 1</div><div class="tx">🎙 He has no face. No eyes. No mouth. But somehow, he is always watching you.</div><div class="ru">У него нет лица. Нет глаз. Нет рта. Но каким-то образом он всегда смотрит на тебя.</div><textarea class="cm" data-k="slenderman-short_b1" rows="2" placeholder="Комментарий к биту 1…"></textarea></div><div class="card"><img loading="lazy" src="posters/slenderman-short/slender_b2.jpg?v=20261104" alt="slender_b2" onclick="openLb(this)"><div class="bn">🎬 Beat 2</div><div class="tx">🎙 Slenderman appeared in photos from the eighties — a ten-foot figure in a black suit, standing behind children who vanished days later.</div><div class="ru">Слендермен появлялся на фото восьмидесятых — трёхметровая фигура в чёрном костюме за спинами детей, которые исчезли спустя несколько дней.</div><textarea class="cm" data-k="slenderman-short_b2" rows="2" placeholder="Комментарий к биту 2…"></textarea></div><div class="card"><img loading="lazy" src="posters/slenderman-short/slender_b3.jpg?v=20261104" alt="slender_b3" onclick="openLb(this)"><div class="bn">🎬 Beat 3</div><div class="tx">🎙 He never chases you. He just stands closer every time you look — between the trees, at the end of your street.</div><div class="ru">Он никогда не гонится за тобой. Он просто стоит ближе каждый раз, когда ты смотришь, — между деревьями, в конце твоей улицы.</div><textarea class="cm" data-k="slenderman-short_b3" rows="2" placeholder="Комментарий к биту 3…"></textarea></div><div class="card"><img loading="lazy" src="posters/slenderman-short/slender_b4.jpg?v=20261104" alt="slender_b4" onclick="openLb(this)"><div class="bn">🎬 Beat 4</div><div class="tx">🎙 The static buzzing in your ears means he&#x27;s already inside your head. Running only makes him taller.</div><div class="ru">Гул помех в ушах значит, что он уже у тебя в голове. Бегство только делает его выше.</div><textarea class="cm" data-k="slenderman-short_b4" rows="2" placeholder="Комментарий к биту 4…"></textarea></div><div class="card"><img loading="lazy" src="posters/slenderman-short/slender_b5.jpg?v=20261104" alt="slender_b5" onclick="openLb(this)"><div class="bn">🎬 Beat 5</div><div class="tx">🎙 So check the last photo on your phone. If a tall man is standing behind you — don&#x27;t turn around.</div><div class="ru">Так что проверь последнее фото в телефоне. Если за тобой стоит высокий человек — не оборачивайся.</div><textarea class="cm" data-k="slenderman-short_b5" rows="2" placeholder="Комментарий к биту 5…"></textarea></div></div>
+<div id="lb"><button class="x" onclick="closeLb()">×</button><img id="lbi" alt=""><div class="cap" id="lbc"></div><div class="txl" id="lbtx"></div><div class="rul" id="lbru"></div><textarea id="lbt" placeholder="Комментарий…"></textarea></div>
+<script>
+const P='short_';
+const tas=[...document.querySelectorAll('textarea.cm')];
+function cnt(){let n=0;tas.forEach(t=>{const v=localStorage.getItem(P+t.dataset.k)||'';if(v.trim())n++});document.getElementById('cnt').textContent=n+' коммент.'}
+tas.forEach(t=>{const v=localStorage.getItem(P+t.dataset.k);if(v){t.value=v;t.classList.add('has')}t.addEventListener('input',()=>{localStorage.setItem(P+t.dataset.k,t.value);t.classList.toggle('has',!!t.value.trim());cnt();syncLb(t)})});
+function syncLb(t){const lt=document.getElementById('lbt');if(lt&&lt.dataset.k===t.dataset.k&&lt.value!==t.value)lt.value=t.value}
+function copyAll(){const lines=tas.map(t=>{const v=(localStorage.getItem(P+t.dataset.k)||t.value||'').trim();return v?t.dataset.k+': '+v:null}).filter(Boolean);const out=lines.join('\n');if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(out).then(()=>alert('Скопировано: '+lines.length))}else{prompt('Скопируй вручную:',out)}}
+function clearAll(){if(!confirm('Очистить все комментарии?'))return;tas.forEach(t=>{localStorage.removeItem(P+t.dataset.k);t.value='';t.classList.remove('has')});cnt()}
+const lb=document.getElementById('lb'),lbi=document.getElementById('lbi'),lbt=document.getElementById('lbt');
+function openLb(img){const card=img.closest('.card');lbi.src=img.src;document.getElementById('lbc').textContent=card.querySelector('.bn').textContent;document.getElementById('lbtx').textContent=card.querySelector('.tx').textContent;const r=card.querySelector('.ru');document.getElementById('lbru').textContent=r?r.textContent:'';const t=card.querySelector('textarea.cm');lbt.dataset.k=t.dataset.k;lbt.value=t.value;lb.classList.add('open')}
+function closeLb(){lb.classList.remove('open')}
+lbt.addEventListener('input',()=>{localStorage.setItem(P+lbt.dataset.k,lbt.value);const t=tas.find(x=>x.dataset.k===lbt.dataset.k);if(t){t.value=lbt.value;t.classList.toggle('has',!!lbt.value.trim())}cnt()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLb()});
+lb.addEventListener('click',e=>{if(e.target===lb)closeLb()});
+cnt();
+</script>
+</body></html>
