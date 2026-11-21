@@ -1,0 +1,83 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><title>Dover Demon — проверка клипов (8 клипов, бита 8 нет)</title><style>
+*{box-sizing:border-box}
+body{margin:0;background:#0d0f12;color:#e8eaed;font:15px/1.45 -apple-system,'Segoe UI',Roboto,sans-serif}
+.bar{position:sticky;top:0;z-index:50;background:#14171cdd;backdrop-filter:blur(6px);padding:10px 14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;border-bottom:1px solid #262b33}
+.bar b{font-size:16px}
+.bar button{background:#ffb020;border:0;border-radius:8px;padding:8px 14px;font-weight:700;cursor:pointer;font-size:14px}
+.bar button.ghost{background:#262b33;color:#e8eaed}
+.warn{flex-basis:100%;color:#ffb020;font-size:.86em}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px;padding:14px}
+.card{background:#14171c;border:1px solid #262b33;border-radius:12px;padding:10px}
+.card.ok{border-color:#2ea043;box-shadow:0 0 0 1px #2ea043}
+.vwrap{position:relative}
+.vwrap video{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:8px;display:block;background:#000}
+.iwrap{position:relative;margin-top:8px}
+.iwrap.first{margin-top:0}
+.iwrap img{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:8px;display:block;background:#000;cursor:zoom-in}
+.zoomer{position:absolute;left:0;right:0;top:0;bottom:46px;cursor:zoom-in}
+.zbadge{position:absolute;top:8px;right:8px;background:#000a;color:#fff;border-radius:999px;padding:5px 11px;font-size:13px;pointer-events:none}
+.nomedia{aspect-ratio:9/16;border:1px dashed #3a4350;border-radius:8px;display:flex;align-items:center;justify-content:center;text-align:center;padding:16px;color:#9aa3ad;background:#101318}
+.bn{font-weight:800;color:#ffb020;margin:8px 0 2px}
+.tx{color:#e8eaed}
+.ru{color:#9aa3ad;font-size:.88em;margin-top:2px}
+.note{color:#ffb020;font-size:.9em;margin-top:5px}
+label.appr{display:flex;gap:8px;align-items:center;margin-top:9px;cursor:pointer;font-weight:600}
+label.appr input{width:20px;height:20px;accent-color:#2ea043;flex:none}
+textarea.cm{width:100%;margin-top:8px;background:#0d0f12;color:#e8eaed;border:1px solid #333a45;border-radius:8px;padding:7px;font:inherit;resize:vertical}
+textarea.cm.has{border-color:#ffb020}
+#lb{position:fixed;inset:0;background:#000d;display:none;z-index:100;flex-direction:column;align-items:center;justify-content:center;padding:14px}
+#lb.open{display:flex}
+#lb video{max-width:70vw;max-height:72vh;border-radius:10px;background:#000}
+#lb img{max-width:70vw;max-height:72vh;border-radius:10px;background:#000}
+#lb .cap{color:#ffb020;font-weight:800;margin:10px 0 4px}
+#lb .txl{max-width:900px;text-align:center}
+#lb .rul{color:#9aa3ad;font-size:.9em;max-width:900px;text-align:center}
+#lb textarea{width:min(900px,92vw);margin-top:10px;background:#14171c;color:#e8eaed;border:1px solid #ffb020;border-radius:8px;padding:9px;font:inherit}
+#lb .x{position:absolute;top:10px;right:16px;font-size:30px;color:#fff;cursor:pointer;background:none;border:0}
+#cpmodal{position:fixed;inset:0;background:#000d;display:none;z-index:120;align-items:center;justify-content:center;padding:14px}
+#cpmodal.open{display:flex}
+.cpbox{background:#14171c;border:1px solid #262b33;border-radius:12px;padding:14px;max-width:640px;width:100%}
+.cpbox textarea{width:100%;min-height:180px;background:#0d0f12;color:#e8eaed;border:1px solid #333a45;border-radius:8px;padding:9px;font:inherit}
+.cpbox button{background:#ffb020;border:0;border-radius:8px;padding:9px 16px;font-weight:700;cursor:pointer;margin-top:10px}
+.cph{margin-bottom:10px}
+#toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);background:#2ea043;color:#fff;padding:10px 18px;border-radius:999px;font-weight:700;opacity:0;pointer-events:none;transition:opacity .25s;z-index:130}
+#toast.show{opacity:1}
+</style></head>
+<body>
+<div class="bar"><b>Dover Demon — проверка клипов (8 клипов, бита 8 нет)</b><span id="cnt">0 коммент.</span><span id="apcnt">✅ Проверено: 0 из 9</span><button onclick="copyAll()">📋 Скопировать все комменты</button><button class="ghost" onclick="backup()">💾 Резервная копия</button><button class="ghost" onclick="clearAll()">Очистить</button><div class="warn">⚠️ Комментарии и отметки живут только в этом браузере: не открывай страницу в другом приложении и не обновляй её, пока не нажмёшь «📋 Скопировать все комменты» или «💾 Резервная копия».</div></div>
+<div class="grid"><div class="card"><div class="vwrap"><video src="dover/beat_1.mp4?v=1793907855" controls loop muted playsinline preload="metadata"></video><div class="zoomer" onclick="openLb(this)"><span class="zbadge">🔍 на весь экран</span></div></div><div class="bn">🎬 Бит 1</div><div class="tx">🎙 On April 21, 1977, a teenager driving in Dover, Massachusetts saw something sitting on a stone wall.</div><div class="ru">21 апреля 1977 года подросток за рулём в Довере, штат Массачусетс, увидел нечто, сидящее на каменной стене.</div><label class="appr"><input type="checkbox" class="ap" data-k="dover_b1"> ✅ Проверено мною</label><textarea class="cm" data-k="dover_b1" rows="2" placeholder="Комментарий…"></textarea></div><div class="card"><div class="vwrap"><video src="dover/beat_2.mp4?v=1793907939" controls loop muted playsinline preload="metadata"></video><div class="zoomer" onclick="openLb(this)"><span class="zbadge">🔍 на весь экран</span></div></div><div class="bn">🎬 Бит 2</div><div class="tx">🎙 It was the size of a child, with skin like wet sandpaper, and no face at all.</div><div class="ru">Оно было размером с ребёнка, с кожей как мокрая наждачная бумага — и совсем без лица.</div><label class="appr"><input type="checkbox" class="ap" data-k="dover_b2"> ✅ Проверено мною</label><textarea class="cm" data-k="dover_b2" rows="2" placeholder="Комментарий…"></textarea></div><div class="card"><div class="vwrap"><video src="dover/beat_3.mp4?v=1793986033" controls loop muted playsinline preload="metadata"></video><div class="zoomer" onclick="openLb(this)"><span class="zbadge">🔍 на весь экран</span></div></div><div class="bn">🎬 Бит 3</div><div class="tx">🎙 Its fingers were long and thin, and they gripped the stones like a spider.</div><div class="ru">Его пальцы были длинными и тонкими и цеплялись за камни, как у паука.</div><label class="appr"><input type="checkbox" class="ap" data-k="dover_b3"> ✅ Проверено мною</label><textarea class="cm" data-k="dover_b3" rows="2" placeholder="Комментарий…"></textarea></div><div class="card"><div class="vwrap"><video src="dover/beat_4.mp4?v=1793986417" controls loop muted playsinline preload="metadata"></video><div class="zoomer" onclick="openLb(this)"><span class="zbadge">🔍 на весь экран</span></div></div><div class="bn">🎬 Бит 4</div><div class="tx">🎙 Two hours later, another teenager met it alone in the woods, and ran all the way home.</div><div class="ru">Два часа спустя другой подросток встретил его одного в лесу — и бежал всю дорогу до дома.</div><label class="appr"><input type="checkbox" class="ap" data-k="dover_b4"> ✅ Проверено мною</label><textarea class="cm" data-k="dover_b4" rows="2" placeholder="Комментарий…"></textarea></div><div class="card"><div class="vwrap"><video src="dover/beat_5.mp4?v=1793986736" controls loop muted playsinline preload="metadata"></video><div class="zoomer" onclick="openLb(this)"><span class="zbadge">🔍 на весь экран</span></div></div><div class="bn">🎬 Бит 5</div><div class="tx">🎙 The next night, a third teenager saw it on a different road, miles away.</div><div class="ru">На следующую ночь третий подросток увидел его на другой дороге, за много миль оттуда.</div><label class="appr"><input type="checkbox" class="ap" data-k="dover_b5"> ✅ Проверено мною</label><textarea class="cm" data-k="dover_b5" rows="2" placeholder="Комментарий…"></textarea></div><div class="card"><div class="vwrap"><video src="dover/beat_6.mp4?v=1793986761" controls loop muted playsinline preload="metadata"></video><div class="zoomer" onclick="openLb(this)"><span class="zbadge">🔍 на весь экран</span></div></div><div class="bn">🎬 Бит 6</div><div class="tx">🎙 None of them knew each other. All three described exactly the same creature.</div><div class="ru">Они не были знакомы друг с другом. Но все трое описали в точности одно и то же существо.</div><label class="appr"><input type="checkbox" class="ap" data-k="dover_b6"> ✅ Проверено мною</label><textarea class="cm" data-k="dover_b6" rows="2" placeholder="Комментарий…"></textarea></div><div class="card"><div class="vwrap"><video src="dover/beat_7.mp4?v=1793986803" controls loop muted playsinline preload="metadata"></video><div class="zoomer" onclick="openLb(this)"><span class="zbadge">🔍 на весь экран</span></div></div><div class="bn">🎬 Бит 7</div><div class="tx">🎙 The police investigated. The town searched. Nothing was ever found.</div><div class="ru">Полиция провела расследование. Город прочёсывали. Ничего так и не нашли.</div><label class="appr"><input type="checkbox" class="ap" data-k="dover_b7"> ✅ Проверено мною</label><textarea class="cm" data-k="dover_b7" rows="2" placeholder="Комментарий…"></textarea></div><div class="card"><div class="nomedia">🎞 Клипа нет — в ролике статика с зумом</div><div class="bn">🎬 Бит 8</div><div class="tx">🎙 And after those two nights, it was never seen again. Not once, in fifty years.</div><div class="ru">А после тех двух ночей его больше никогда не видели. Ни разу за пятьдесят лет.</div><label class="appr"><input type="checkbox" class="ap" data-k="dover_b8"> ✅ Проверено мною</label><textarea class="cm" data-k="dover_b8" rows="2" placeholder="Комментарий…"></textarea></div><div class="card"><div class="vwrap"><video src="dover/beat_9.mp4?v=1794177003" controls loop muted playsinline preload="metadata"></video><div class="zoomer" onclick="openLb(this)"><span class="zbadge">🔍 на весь экран</span></div></div><div class="bn">🎬 Бит 9</div><div class="tx">🎙 If you ever see orange eyes on a wall tonight, keep driving. Subscribe to survive the next one.</div><div class="ru">Если сегодня ночью увидишь оранжевые глаза на стене — не останавливайся, езжай дальше. Подпишись, чтобы пережить следующую встречу.</div><label class="appr"><input type="checkbox" class="ap" data-k="dover_b9"> ✅ Проверено мною</label><textarea class="cm" data-k="dover_b9" rows="2" placeholder="Комментарий…"></textarea></div></div>
+<div id="lb"><button class="x" onclick="closeLb()">×</button><video id="lbv" controls loop playsinline></video><img id="lbi" alt="" style="display:none"><div class="cap" id="lbc"></div><div class="txl" id="lbtx"></div><div class="rul" id="lbru"></div><textarea id="lbt" placeholder="Комментарий…"></textarea></div>
+<div id="cpmodal"><div class="cpbox"><div class="cph">Не удалось скопировать автоматически. Зажми текст → «Выбрать всё» → «Копировать»:</div><textarea id="cptext" readonly></textarea><button onclick="closeModal()">Закрыть</button></div></div>
+<div id="toast"></div>
+<script>
+const P='short_';
+const BACKUP_NAME='dover_comments.txt';
+const tas=[...document.querySelectorAll('textarea.cm')];
+const cbs=[...document.querySelectorAll('input.ap')];
+const cards=[...document.querySelectorAll('.card')];
+function cmtCnt(){let n=0;tas.forEach(t=>{const v=localStorage.getItem(P+t.dataset.k)||'';if(v.trim())n++});document.getElementById('cnt').textContent=n+' коммент.'}
+function apCnt(){let n=0;cbs.forEach(c=>{if(localStorage.getItem(P+c.dataset.k+'_approve')==='1')n++});document.getElementById('apcnt').textContent='✅ Проверено: '+n+' из '+cbs.length}
+function markCard(cb){cb.closest('.card').classList.toggle('ok',cb.checked)}
+tas.forEach(t=>{const v=localStorage.getItem(P+t.dataset.k);if(v){t.value=v;t.classList.add('has')}t.addEventListener('input',()=>{localStorage.setItem(P+t.dataset.k,t.value);t.classList.toggle('has',!!t.value.trim());cmtCnt();syncLb(t)})});
+cbs.forEach(c=>{c.checked=localStorage.getItem(P+c.dataset.k+'_approve')==='1';markCard(c);c.addEventListener('change',()=>{if(c.checked)localStorage.setItem(P+c.dataset.k+'_approve','1');else localStorage.removeItem(P+c.dataset.k+'_approve');markCard(c);apCnt()})});
+function syncLb(t){const lt=document.getElementById('lbt');if(lt&&lt.dataset.k===t.dataset.k&&lt.value!==t.value)lt.value=t.value}
+function buildExport(){return cards.map(card=>{const t=card.querySelector('textarea.cm');const c=card.querySelector('input.ap');const k=t.dataset.k;const v=(localStorage.getItem(P+k)||t.value||'').trim();const on=localStorage.getItem(P+k+'_approve')==='1'||c.checked;let line=k+': '+(on?'✅ ПРОВЕРЕНО МНОЮ':'⛔ не проверено');if(v)line+=' — '+v;return line}).join('\n')}
+function toast(m){const d=document.getElementById('toast');d.textContent=m;d.classList.add('show');setTimeout(()=>d.classList.remove('show'),2200)}
+async function copyAll(){const out=buildExport();
+try{await navigator.clipboard.writeText(out);toast('📋 Скопировано');return}catch(e){}
+try{const ta=document.createElement('textarea');ta.value=out;ta.setAttribute('readonly','');ta.style.position='fixed';ta.style.top='0';ta.style.opacity='0';document.body.appendChild(ta);ta.focus();ta.select();ta.setSelectionRange(0,out.length);const ok=document.execCommand('copy');ta.remove();if(ok){toast('📋 Скопировано');return}}catch(e){}
+document.getElementById('cptext').value=out;document.getElementById('cpmodal').classList.add('open')}
+function closeModal(){document.getElementById('cpmodal').classList.remove('open')}
+function backup(){const out=buildExport();const blob=new Blob([out],{type:'text/plain;charset=utf-8'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=BACKUP_NAME;document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},400);toast('💾 Резервная копия сохранена')}
+function clearAll(){if(!confirm('Очистить все комментарии и отметки проверки?'))return;tas.forEach(t=>{localStorage.removeItem(P+t.dataset.k);t.value='';t.classList.remove('has')});cbs.forEach(c=>{localStorage.removeItem(P+c.dataset.k+'_approve');c.checked=false;markCard(c)});cmtCnt();apCnt()}
+const lb=document.getElementById('lb'),lbv=document.getElementById('lbv'),lbi=document.getElementById('lbi'),lbt=document.getElementById('lbt');
+function fillLb(card){document.getElementById('lbc').textContent=card.querySelector('.bn').textContent;document.getElementById('lbtx').textContent=card.querySelector('.tx').textContent;const r=card.querySelector('.ru');document.getElementById('lbru').textContent=r?r.textContent:'';const t=card.querySelector('textarea.cm');lbt.dataset.k=t.dataset.k;lbt.value=t.value}
+function openLb(el){const card=el.closest('.card');const v=card.querySelector('video');lbi.style.display='none';lbv.style.display='';lbv.src=v.currentSrc||v.getAttribute('src');fillLb(card);lb.classList.add('open');const p=lbv.play();if(p&&p.catch)p.catch(()=>{})}
+function openLbImg(el){const card=el.closest('.card');lbv.pause();lbv.style.display='none';lbi.style.display='';lbi.src=el.currentSrc||el.getAttribute('src');fillLb(card);lb.classList.add('open')}
+function closeLb(){lbv.pause();lb.classList.remove('open')}
+lbt.addEventListener('input',()=>{localStorage.setItem(P+lbt.dataset.k,lbt.value);const t=tas.find(x=>x.dataset.k===lbt.dataset.k);if(t){t.value=lbt.value;t.classList.toggle('has',!!lbt.value.trim())}cmtCnt()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeLb();closeModal()}});
+lb.addEventListener('click',e=>{if(e.target===lb)closeLb()});
+cmtCnt();apCnt();
+</script>
+</body></html>
