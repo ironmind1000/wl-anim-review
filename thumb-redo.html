@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Переделка тамбнейлов — крупный текст (≥1/3 кадра)</title>
+<style>
+ body{font-family:-apple-system,system-ui,sans-serif;background:#111;color:#eee;margin:0;padding:12px}
+ h1{font-size:19px} .sub{color:#aaa;font-size:13px;margin-bottom:12px}
+ .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:14px}
+ .card{background:#1c1c1e;border:1px solid #333;border-radius:12px;padding:10px}
+ .pair{display:flex;gap:6px;align-items:flex-start}
+ .pair figure{margin:0;flex:1}
+ .pair img{width:100%;border-radius:8px;cursor:zoom-in;display:block}
+ .pair figcaption{font-size:11px;color:#bbb;margin-top:4px;text-align:center}
+ .arrow{align-self:center;font-size:20px;color:#888}
+ .meta{margin-top:8px;font-size:13px} .hook{color:#ffb3b3} .vid{color:#777;font-size:11px}
+ textarea{width:100%;box-sizing:border-box;margin-top:8px;min-height:44px;background:#000;color:#eee;border:1px solid #444;border-radius:8px;padding:6px}
+ #bar{position:sticky;top:0;z-index:5;background:#222;border:1px solid #444;border-radius:10px;padding:10px;margin-bottom:12px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+ button{background:#b00;color:#fff;border:0;border-radius:8px;padding:9px 14px;font-size:14px;cursor:pointer}
+ #lb{display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:50;align-items:center;justify-content:center}
+ #lb img{max-width:96vw;max-height:96vh}
+ #modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.8);z-index:60;align-items:center;justify-content:center}
+ #modal .box{background:#1c1c1e;border:1px solid #555;border-radius:12px;padding:14px;max-width:92vw;width:560px}
+ #modal textarea{min-height:200px}
+</style></head><body>
+<h1>Переделка тамбнейлов: мелкий текст → крупный (стандарт: блок надписи ≥ 1/3 высоты кадра)</h1>
+<div class="sub">44 постера: слева — как стоял на канале (доля текста замерена по кадру), справа — новый постер Codex с той же сценой и той же фразой; все поставлены на канал, shortsAspectRatio подтверждён по API. Клик по картинке — зум.</div>
+<div id="bar"><button id="copyAll">📋 Скопировать все комменты</button><span id="cnt">Заполнено: 0</span><button id="backup" style="background:#444">💾 Резервная копия</button><span style="color:#f66;font-size:12px">⚠️ Не обновляй страницу до успешного экспорта комментов</span></div>
+<div class="grid">
+    <div class="card">
+      <div class="pair">
+        <figure><img src="redo_page_assets/LAymlk3w1m8_old.jpg" data-full="redo_page_assets/LAymlk3w1m8_old.jpg" alt="old"><figcaption>БЫЛО · текст 0.27</figcaption></figure>
+        <div class="arrow">→</div>
+        <figure><img src="redo_page_assets/LAymlk3w1m8_new.jpg" data-full="redo_page_assets/LAymlk3w1m8_new.jpg" alt="new"><figcaption>СТАЛО · текст 0.30 · поставлен, sar ✓</figcaption></figure>
+      </div>
+      <div class="meta"><b>Koschei — The Deathless Sorcerer</b><br><span class="hook">«YOU CANNOT KILL THIS MAN.»</span><br><span class="vid">LAymlk3w1m8</span></div>
+      <textarea data-k="redo_LAymlk3w1m8" placeholder="Комментарий..."></textarea>
+    </div>
+    <div class="card">
+      <div class="pair">
+        <figure><img src="redo_page_assets/-IxwELtC_hM_old.jpg" data-full="redo_page_assets/-IxwELtC_hM_old.jpg" alt="old"><figcaption>БЫЛО · текст 0.07</figcaption></figure>
+        <div class="arrow">→</div>
+        <figure><img src="redo_page_assets/-IxwELtC_hM_new.jpg" data-full="redo_page_assets/-IxwELtC_hM_new.jpg" alt="new"><figcaption>СТАЛО · текст 0.34 · поставлен, sar ✓</figcaption></figure>
+      </div>
+      <div class="meta"><b>Lilith — The First Woman</b><br><span class="hook">«THE FIRST WOMAN WAS ERASED»</span><br><span class="vid">-IxwELtC_hM</span></div>
+      <textarea data-k="redo_-IxwELtC_hM" placeholder="Комментарий..."></textarea>
+    </div>
+    <div class="card">
+      <div class="pair">
+        <figure><img src="redo_page_assets/SkdxhIB_7pc_old.jpg" data-full="redo_page_assets/SkdxhIB_7pc_old.jpg" alt="old"><figcaption>БЫЛО · текст 0.15</figcaption></figure>
+        <div class="arrow">→</div>
+        <figure><img src="redo_page_assets/SkdxhIB_7pc_new.jpg" data-full="redo_page_assets/SkdxhIB_7pc_new.jpg" alt="new"><figcaption>СТАЛО · текст 0.30 · поставлен, sar ✓</figcaption></figure>
+      </div>
+      <div class="meta"><b>Bannik — The Bathhouse Spirit</b><br><span class="hook">«HE PEELS SKIN OFF YOUR BACK»</span><br><span class="vid">SkdxhIB_7pc</span></div>
+      <textarea data-k="redo_SkdxhIB_7pc" placeholder="Комментарий..."></textarea>
+    </div>
+    <div class="card">
+      <div class="pair">
+        <figure><img src="redo_page_assets/La61tIYZ0Rg_old.jpg" data-full="redo_page_assets/La61tIYZ0Rg_old.jpg" alt="old"><figcaption>БЫЛО · текст 0.08</figcaption></figure>
+        <div class="arrow">→</div>
+        <figure><img src="redo_page_assets/La61tIYZ0Rg_new.jpg" data-full="redo_page_assets/La61tIYZ0Rg_new.jpg" alt="new"><figcaption>СТАЛО · текст 0.30 · поставлен, sar ✓</figcaption></figure>
+      </div>
+      <div class="meta"><b>Wendigo — The Starving Spirit</b><br><span class="hook">«IT WAS ONCE A MAN»</span><br><span class="vid">La61tIYZ0Rg</span></div>
+      <textarea data-k="redo_La61tIYZ0Rg" placeholder="Комментарий..."></textarea>
+    </div>
+    <div class="card">
+      <div class="pair">
+        <figure><img src="redo_page_assets/pmy6HTvKjBY_old.jpg" data-full="redo_page_assets/pmy6HTvKjBY_old.jpg" alt="old"><figcaption>БЫЛО · текст 0.26</figcaption></figure>
+        <div class="arrow">→</div>
+        <figure><img src="redo_page_assets/pmy6HTvKjBY_new.jpg" data-full="redo_page_assets/pmy6HTvKjBY_new.jpg" alt="new"><figcaption>СТАЛО · текст 0.30 · поставлен, sar ✓</figcaption></figure>
+      </div>
+      <div class="meta"><b>Leshy — The Forest Has a Master</b><br><span class="hook">«THE FOREST IS MOVING YOU»</span><br><span class="vid">pmy6HTvKjBY</span></div>
+      <textarea data-k="redo_pmy6HTvKjBY" placeholder="Комментарий..."></textarea>
+    </div>
+    <div class="card">
+      <div class="pair">
+        <figure><img src="redo_page_assets/f-rHLFN_JOA_old.jpg" data-full="redo_page_assets/f-rHLFN_JOA_old.jpg" alt="old"><figcaption>БЫЛО · текст 0.27</figcaption></figure>
+        <div class="arrow">→</div>
+        <figure><img src="redo_page_assets/f-rHLFN_JOA_new.jpg" data-full="redo_page_assets/f-rHLFN_JOA_new.jpg" alt="new"><figcaption>СТАЛО · текст 0.28 · поставлен, sar ✓</figcaption></figure>
+      </div>
+      <div class="meta"><b>Chudail — The Back-Footed Ghost</b><br><span class="hook">«WHY ARE HER FEET BACKWARDS?»</span><br><span class="vid">f-rHLFN_JOA</span></div>
+      <textarea data-k="redo_f-rHLFN_JOA" placeholder="Комментарий..."></textarea>
+    </div>
+    <div class="card">
+      <div class="pair">
+        <figure><img src="redo_page_assets/ogY028xsZAM_old.jpg" data-full="redo_page_assets/ogY028xsZAM_old.jpg" alt="old"><figcaption>БЫЛО · текст 0.27</figcaption></figure>
+        <div class="arrow">→</div>
+        <figure><img src="redo_page_assets/ogY028xsZAM_new.jpg" data-full="redo_page_assets/ogY028xsZAM_new.jpg" alt="new"><figcaption>СТАЛО · текст 0.30 · поставлен, sar ✓</figcaption></figure>
+      </div>
+      <div class="meta"><b>La Siguanaba — The Horse-Faced Woman</b><br><span class="hook">«HER FACE IS A ROTTING HORSE SKULL»</span><br><span class="vid">ogY028xsZAM</span></div>
+      <textarea data-k="redo_ogY028xsZAM" placeholder="Комментарий..."></textarea>
+    </div>
+    <div class="card">
+      <div class="pair">
+        <figure><img src="redo_page_assets/uDf972eqkXY_old.jpg" data-full="redo_page_assets/uDf972eqkXY_old.jpg" alt="old"><figcaption>БЫЛО · текст 0.10</figcaption></figure>
+        <div class="arrow">→</div>
+        <figure><img src="redo_page_assets/uDf972eqkXY_new.jpg" data-full="redo_page_assets/uDf972eqkXY_new.jpg" alt="new"><figcaption>СТАЛО · текст 0.33 · поставлен, sar ✓</figcaption></figure>
+      </div>
+      <div class="meta"><b>Wampus Cat — The Screaming Panther</b><br><span class="hook">«SHE SCREAMS YOUR NAME?»</span><br><span class="vid">uDf972eqkXY</span></div>
+      <textarea data-k="redo_uDf972eqkXY" placeholder="Комментарий..."></textarea>
+    </div>
+    <div class="card">
+      <div class="pair">
+        <figure><img src="redo_page_assets/HbcZ7JEUCIg_old.jpg" data-full="redo_page_assets/HbcZ7JEUCIg_old.jpg" alt="old"><figcaption>БЫЛО · текст 0.07</figcaption></figure>
+        <div class="arrow">→</div>
+        <figure><img src="redo_page_assets/HbcZ7JEUCIg_new.jpg" data-full="redo_page_assets/HbcZ7JEUCIg_new.jpg" alt="new"><figcaption>СТАЛО · текст 0.33 · поставлен, sar ✓</figcaption></figure>
+      </div>
+      <div class="meta"><b>Baba Yaga — The Hut on Chicken Legs</b><br><span class="hook">«BABA YAGA'S HUT IS ALIVE?»</span><br><span class="vid">HbcZ7JEUCIg</span></div>
+      <textarea data-k="redo_HbcZ7JEUCIg" placeholder="Комментарий..."></textarea>
+    </div>
+    <div class="card">
+      <div class="pair">
+        <figure><img src="redo_page_assets/dD9IpLowwv0_old.jpg" data-full="redo_page_assets/dD9IpLowwv0_old.jpg" alt="old"><figcaption>БЫЛО · текст 0.18</figcaption></figure>
+        <div class="arrow">→</div>
+        <figure><img src="redo_page_assets/dD9IpLowwv0_new.jpg" data-full="redo_page_assets/dD9IpLowwv0_new.jpg" alt="new"><figcaption>СТАЛО · текст 0.30 · поставлен, sar ✓</figcaption></figure>
+      </div>
+      <div class="meta"><b>Hydra — Cut One Off, Two Grow Back</b><br><span class="hook">«CUT ONE OFF, TWO GROW BACK»</span><br><span class="vid">dD9IpLowwv0</span></div>
+      <textarea data-k="redo_dD9IpLowwv0" placeholder="Комментарий..."></textarea>
+    </div>
+    <div class="card">
+      <div class="pair">
+        <figure><img src="redo_page_assets/m2b0m5waVng_old.jpg" data-full="redo_page_assets/m2b0m5waVng_old.jpg" alt="old"><figcaption>БЫЛО · текст 0.25</figcaption></figure>
+        <div class="arrow">→</div>
+        <figure><img src="redo_page_assets/m2b0m5waVng_new.jpg" data-full="redo_page_assets/m2b0m5waVng_new.jpg" alt="new"><figcaption>СТАЛО · текст 0.30 · поставлен, sar ✓</figcaption></figure>
+      </div>
+      <div class="meta"><b>Polevik — The Field Spirit</b><br><span class="hook">«THE FIELD IS HIS»</span><br><span class="vid">m2b0m5waVng</span></div>
+      <textarea data-k="redo_m2b0m5waVng" placeholder="Комментарий..."></textarea>
+    </div>
+    <div class="card">
+      <div class="pair">
+        <figure><img src="redo_page_assets/dI34JPc4Wjc_old.jpg" data-full="redo_page_assets/dI34JPc4Wjc_old.jpg" alt="old"><figcaption>БЫЛО · текст 0.25</figcaption></figure>
+        <div class="arrow">→</div>
+        <figure><img src="redo_page_assets/dI34JPc4Wjc_new.jpg" data-full="redo_page_assets/dI34JPc4Wjc_new.jpg" alt="new"><figcaption>СТАЛО · текст 0.33 · поставлен, sar ✓</figcaption></figure>
+      </div>
+      <div class="meta"><b>Domovoi — The House Spirit</b><br><span class="hook">«YOUR LUCK DIES FIRST»</span><br><span class="vid">dI34JPc4Wjc</span></div>
+      <textarea data-k="redo_dI34JPc4Wjc" placeholder="Комментарий..."></textarea>
+    </div>
+    <div class="card">
+      <div class="pair">
+        <figure><img src="redo_page_assets/pJ6YeQ9iLXo_old.jpg" data-full="redo_page_assets/pJ6YeQ9iLXo_old.jpg" alt="old"><figcaption>БЫЛО · текст 0.22</figcaption></figure>
+        <div class="arrow">→</div>
+        <figure><img src="redo_page_assets/pJ6YeQ9iLXo_new.jpg" data-full="redo_page_assets/pJ6YeQ9iLXo_new.jpg" alt="new"><figcaption>СТАЛО · текст 0.30 · поставлен, sar ✓</figcaption></figure>
+      </div>
+      <div class="meta"><b>Basilisk — The Gaze That Kills</b><br><span class="hook">«HIS GAZE KILLS»</span><br><span class="vid">pJ6YeQ9iLXo</span></div>
+      <textarea data-k="redo_pJ6YeQ9iLXo" placeholder="Комментарий..."></textarea>
+    </div>
+    <div class="card">
+      <div class="pair">
+        <figure><img src="redo_page_assets/ujMX9IyBa-k_old.jpg" data-full="redo_page_assets/ujMX9IyBa-k_old.jpg" alt="old"><figcaption>БЫЛО · текст 0.07</figcaption></figure>
+        <div class="arrow">→</div>
+        <figure><img src="redo_page_assets/ujMX9IyBa-k_new.jpg" data-full="redo_page_assets/ujMX9IyBa-k_new.jpg" alt="new"><figcaption>СТАЛО · текст 0.29 · поставлен, sar ✓</figcaption></figure>
+      </div>
+      <div class="meta"><b>Vasilisa — The Skull Fence</b><br><span class="hook">«HER FENCE IS MADE OF SKULLS?»</span><br><span class="vid">ujMX9IyBa-k</span></div>
+      <textarea data-k="redo_ujMX9IyBa-k" placeholder="Комментарий..."></textarea>
+    </div>
+    <div class="card">
+      <div class="pair">
+        <figure><img src="redo_page_assets/Z2O-rP-W4mk_old.jpg" data-full="redo_page_assets/Z2O-rP-W4mk_old.jpg" alt="old"><figcaption>БЫЛО · текст 0.25</figcaption></figure>
+        <div class="arrow">→</div>
+        <figure><img src="redo_page_assets/Z2O-rP-W4mk_new.jpg" data-full="redo_page_assets/Z2O-rP-W4mk_new.jpg" alt="new"><figcaption>СТАЛО · текст 0.33 · поставлен, sar ✓</figcaption></figure>
+      </div>
+      <div class="meta"><b>Perun — The Slavic Thunder God</b><br><span class="hook">«PERUN — THE SLAVIC THUNDER GOD»</span><br><span class="vid">Z2O-rP-W4mk</span></div>
+      <textarea data-k="redo_Z2O-rP-W4mk" placeholder="Комментарий..."></textarea>
+    </div>
+    <div class="card">
+      <div class="pair">
+        <figure><img src="redo_page_assets/0rMfcTGo9qw_old.jpg" data-full="redo_page_assets/0rMfcTGo9qw_old.jpg" alt="old"><figcaption>БЫЛО · текст 0.25</figcaption></figure>
+        <div class="arrow">→</div>
+        <figure><img src="redo_page_assets/0rMfcTGo9qw_new.jpg" data-full="redo_page_assets/0rMfcTGo9qw_new.jpg" alt="new"><figcaption>СТАЛО · текст 0.28 · поставлен, sar ✓</figcaption></figure>
+      </div>
+      <div class="meta"><b>Veles — God of the Dead</b><br><span class="hook">«VELES — GOD OF THE DEAD»</span><br><span class="vid">0rMfcTGo9qw</span></div>
+      <textarea data-k="redo_0rMfcTGo9qw" placeholder="Комментарий..."></textarea>
+    </div>
+    <div class="card">
+      <div class="pair">
+        <figure><img src="redo_page_assets/kBj0uFqOQOM_old.jpg" data-full="redo_page_assets/kBj0uFqOQOM_old.jpg" alt="old"><figcaption>БЫЛО · текст 0.20</figcaption></figure>
+        <div class="arrow">→</div>
+        <figure><img src="redo_page_assets/kBj0uFqOQOM_new.jpg" data-full="redo_page_assets/kBj0uFqOQOM_new.jpg" alt="new"><figcaption>СТАЛО · текст 0.30 · поставлен, sar ✓</figcaption></figure>
+      </div>
+      <div class="meta"><b>Dazhbog — The Sun That Watches</b><br><span class="hook">«THE SUN THAT WATCHES»</span><br><span class="vid">kBj0uFqOQOM</span></div>
+      <textarea data-k="redo_kBj0uFqOQOM" placeholder="Комментарий..."></textarea>
+    </div>
+    <div class="card">
+      <div class="pair">
+        <figure><img src="redo_page_assets/Q6Gt0D0bd3Y_old.jpg" data-full="redo_page_assets/Q6Gt0D0bd3Y_old.jpg" alt="old"><figcaption>БЫЛО · текст 0.22</figcaption></figure>
+        <div class="arrow">→</div>
+        <figure><img src="redo_page_assets/Q6Gt0D0bd3Y_new.jpg" data-full="redo_page_assets/Q6Gt0D0bd3Y_new.jpg" alt="new"><figcaption>СТАЛО · текст 0.28 · поставлен, sar ✓</figcaption></figure>
+      </div>
+      <div class="meta"><b>Vodyanoy — The Drowned God</b><br><span class="hook">«YOU DROWNED»</span><br><span class="vid">Q6Gt0D0bd3Y</span></div>
+      <textarea data-k="redo_Q6Gt0D0bd3Y" placeholder="Комментарий..."></textarea>
+    </div>
+    <div class="card">
+      <div class="pair">
+        <figure><img src="redo_page_assets/SvbYuccs4Ks_old.jpg" data-full="redo_page_assets/SvbYuccs4Ks_old.jpg" alt="old"><figcaption>БЫЛО · текст 0.20</figcaption></figure>
+        <div class="arrow">→</div>
+        <figure><img src="redo_page_assets/SvbYuccs4Ks_new.jpg" data-full="redo_page_assets/SvbYuccs4Ks_new.jpg" alt="new"><figcaption>СТАЛО · текст 0.30 · поставлен, sar ✓</figcaption></figure>
+      </div>
+      <div class="meta"><b>Morana & the Sun — Winter Kills the Sun</b><br><span class="hook">«CAN WINTER KILL THE SUN?»</span><br><span class="vid">SvbYuccs4Ks</span></div>
+      <textarea data-k="redo_SvbYuccs4Ks" placeholder="Комментарий..."></textarea>
+    </div>
+    <div class="card">
+      <div class="pair">
+        <figure><img src="redo_page_assets/4roAwkir2TA_old.jpg" data-full="redo_page_assets/4roAwkir2TA_old.jpg" alt="old"><figcaption>БЫЛО · текст 0.20</figcaption></figure>
+        <div class="arrow">→</div>
+        <figure><img src="redo_page_assets/4roAwkir2TA_new.jpg" data-full="redo_page_assets/4roAwkir2TA_new.jpg" alt="new"><figcaption>СТАЛО · текст 0.30 · поставлен, sar ✓</figcaption></figure>
+      </div>
+      <div class="meta"><b>Bannik — The Fourth Steam</b><br><span class="hook">«WOULD YOU TAKE THE FOURTH STEAM?»</span><br><span class="vid">4roAwkir2TA</span></div>
+      <textarea data-k="redo_4roAwkir2TA" placeholder="Комментарий..."></textarea>
+    </div>
+    <div class="card">
+      <div class="pair">
+        <figure><img src="redo_page_assets/pVBWhn4jM_0_old.jpg" data-full="redo_page_assets/pVBWhn4jM_0_old.jpg" alt="old"><figcaption>БЫЛО · текст 0.20</figcaption></figure>
+        <div class="arrow">→</div>
+        <figure><img src="redo_page_assets/pVBWhn4jM_0_new.jpg" data-full="redo_page_assets/pVBWhn4jM_0_new.jpg" alt="new"><figcaption>СТАЛО · текст 0.33 · поставлен, sar ✓</figcaption></figure>
+      </div>
+      <div class="meta"><b>Zmey vs Koschei — Fire vs Immortality</b><br><span class="hook">«FIRE VS IMMORTALITY»</span><br><span class="vid">pVBWhn4jM_0</span></div>
+      <textarea data-k="redo_pVBWhn4jM_0" placeholder="Комментарий..."></textarea>
+    </div>
+    <div class="card">
+      <div class="pair">
+        <figure><img src="redo_page_assets/_dJO53n9Jb0_old.jpg" data-full="redo_page_assets/_dJO53n9Jb0_old.jpg" alt="old"><figcaption>БЫЛО · текст 0.08</figcaption></figure>
+        <div class="arrow">→</div>
+        <figure><img src="redo_page_assets/_dJO53n9Jb0_new.jpg" data-full="redo_page_assets/_dJO53n9Jb0_new.jpg" alt="new"><figcaption>СТАЛО · текст 0.29 · поставлен, sar ✓</figcaption></figure>
+      </div>
+      <div class="meta"><b>Morana — They Drown Her to Kill Winter</b><br><span class="hook">«THEY DROWN HER TO KILL WINTER?»</span><br><span class="vid">_dJO53n9Jb0</span></div>
+      <textarea data-k="redo__dJO53n9Jb0" placeholder="Комментарий..."></textarea>
+    </div>
+    <div class="card">
+      <div class="pair">
+        <figure><img src="redo_page_assets/BwfOBdYCo-4_old.jpg" data-full="redo_page_assets/BwfOBdYCo-4_old.jpg" alt="old"><figcaption>БЫЛО · текст 0.17</figcaption></figure>
+        <div class="arrow">→</div>
+        <figure><img src="redo_page_assets/BwfOBdYCo-4_new.jpg" data-full="redo_page_assets/BwfOBdYCo-4_new.jpg" alt="new"><figcaption>СТАЛО · текст 0.33 · поставлен, sar ✓</figcaption></figure>
+      </div>
+      <div class="meta"><b>Draugr — The Dead That Won't Stay Buried</b><br><span class="hook">«THE DEAD THAT WON'T STAY BURIED»</span><br><span class="vid">BwfOBdYCo-4</span></div>
+      <textarea data-k="redo_BwfOBdYCo-4" placeholder="Комментарий..."></textarea>
+    </div>
+    <div class="card">
+      <div class="pair">
+        <figure><img src="redo_page_assets/IFwTKjhWUhM_old.jpg" data-full="redo_page_assets/IFwTKjhWUhM_old.jpg" alt="old"><figcaption>БЫЛО · текст 0.17</figcaption></figure>
+        <div class="arrow">→</div>
+        <figure><img src="redo_page_assets/IFwTKjhWUhM_new.jpg" data-full="redo_page_assets/IFwTKjhWUhM_new.jpg" alt="new"><figcaption>СТАЛО · текст 0.30 · поставлен, sar ✓</figcaption></figure>
+      </div>
+      <div class="meta"><b>Upyr — The First Vampire</b><br><span class="hook">«THE FIRST VAMPIRE WAS WORSE»</span><br><span class="vid">IFwTKjhWUhM</span></div>
+      <textarea data-k="redo_IFwTKjhWUhM" placeholder="Комментарий..."></textarea>
+    </div>
+    <div class="card">
+      <div class="pair">
+        <figure><img src="redo_page_assets/rYyCj00mSN4_old.jpg" data-full="redo_page_assets/rYyCj00mSN4_old.jpg" alt="old"><figcaption>БЫЛО · текст 0.05</figcaption></figure>
+        <div class="arrow">→</div>
+        <figure><img src="redo_page_assets/rYyCj00mSN4_new.jpg" data-full="redo_page_assets/rYyCj00mSN4_new.jpg" alt="new"><figcaption>СТАЛО · текст 0.29 · поставлен, sar ✓</figcaption></figure>
+      </div>
+      <div class="meta"><b>Satan — The Bull Demon</b><br><span class="hook">«THE BULL DEMON DEMANDS A SACRIFICE?»</span><br><span class="vid">rYyCj00mSN4</span></div>
+      <textarea data-k="redo_rYyCj00mSN4" placeholder="Комментарий..."></textarea>
+    </div>
+    <div class="card">
+      <div class="pair">
+        <figure><img src="redo_page_assets/JRsEySa0S70_old.jpg" data-full="redo_page_assets/JRsEySa0S70_old.jpg" alt="old"><figcaption>БЫЛО · текст 0.25</figcaption></figure>
+        <div class="arrow">→</div>
+        <figure><img src="redo_page_assets/JRsEySa0S70_new.jpg" data-full="redo_page_assets/JRsEySa0S70_new.jpg" alt="new"><figcaption>СТАЛО · текст 0.33 · поставлен, sar ✓</figcaption></figure>
+      </div>
+      <div class="meta"><b>Kitsune — She Was Never Human</b><br><span class="hook">«SHE WAS NEVER HUMAN»</span><br><span class="vid">JRsEySa0S70</span></div>
+      <textarea data-k="redo_JRsEySa0S70" placeholder="Комментарий..."></textarea>
+    </div>
+    <div class="card">
+      <div class="pair">
+        <figure><img src="redo_page_assets/mDjq4H4FYfA_old.jpg" data-full="redo_page_assets/mDjq4H4FYfA_old.jpg" alt="old"><figcaption>БЫЛО · текст 0.25</figcaption></figure>
+        <div class="arrow">→</div>
+        <figure><img src="redo_page_assets/mDjq4H4FYfA_new.jpg" data-full="redo_page_assets/mDjq4H4FYfA_new.jpg" alt="new"><figcaption>СТАЛО · текст 0.28 · поставлен, sar ✓</figcaption></figure>
+      </div>
+      <div class="meta"><b>Kuchisake-onna — Am I Beautiful?</b><br><span class="hook">«AM I BEAUTIFUL?»</span><br><span class="vid">mDjq4H4FYfA</span></div>
+      <textarea data-k="redo_mDjq4H4FYfA" placeholder="Комментарий..."></textarea>
+    </div>
+    <div class="card">
+      <div class="pair">
+        <figure><img src="redo_page_assets/nbbRByBgtK4_old.jpg" data-full="redo_page_assets/nbbRByBgtK4_old.jpg" alt="old"><figcaption>БЫЛО · текст 0.25</figcaption></figure>
+        <div class="arrow">→</div>
+        <figure><img src="redo_page_assets/nbbRByBgtK4_new.jpg" data-full="redo_page_assets/nbbRByBgtK4_new.jpg" alt="new"><figcaption>СТАЛО · текст 0.35 · поставлен, sar ✓</figcaption></figure>
+      </div>
+      <div class="meta"><b>Aka Manto — Red Paper or Blue?</b><br><span class="hook">«RED PAPER OR BLUE?»</span><br><span class="vid">nbbRByBgtK4</span></div>
+      <textarea data-k="redo_nbbRByBgtK4" placeholder="Комментарий..."></textarea>
+    </div>
+    <div class="card">
+      <div class="pair">
+        <figure><img src="redo_page_assets/CTmZnYUQntQ_old.jpg" data-full="redo_page_assets/CTmZnYUQntQ_old.jpg" alt="old"><figcaption>БЫЛО · текст 0.22</figcaption></figure>
+        <div class="arrow">→</div>
+        <figure><img src="redo_page_assets/CTmZnYUQntQ_new.jpg" data-full="redo_page_assets/CTmZnYUQntQ_new.jpg" alt="new"><figcaption>СТАЛО · текст 0.28 · поставлен, sar ✓</figcaption></figure>
+      </div>
+      <div class="meta"><b>Teke Teke — Don't Turn Around</b><br><span class="hook">«DON'T TURN AROUND»</span><br><span class="vid">CTmZnYUQntQ</span></div>
+      <textarea data-k="redo_CTmZnYUQntQ" placeholder="Комментарий..."></textarea>
+    </div>
+    <div class="card">
+      <div class="pair">
+        <figure><img src="redo_page_assets/ofkO8WW-szs_old.jpg" data-full="redo_page_assets/ofkO8WW-szs_old.jpg" alt="old"><figcaption>БЫЛО · текст 0.22</figcaption></figure>
+        <div class="arrow">→</div>
+        <figure><img src="redo_page_assets/ofkO8WW-szs_new.jpg" data-full="redo_page_assets/ofkO8WW-szs_new.jpg" alt="new"><figcaption>СТАЛО · текст 0.32 · поставлен, sar ✓</figcaption></figure>
+      </div>
+      <div class="meta"><b>Manananggal — She Tears Herself in Half</b><br><span class="hook">«WHY DOES SHE TEAR HERSELF IN HALF?»</span><br><span class="vid">ofkO8WW-szs</span></div>
+      <textarea data-k="redo_ofkO8WW-szs" placeholder="Комментарий..."></textarea>
+    </div>
+    <div class="card">
+      <div class="pair">
+        <figure><img src="redo_page_assets/oQIGj7vmSP4_old.jpg" data-full="redo_page_assets/oQIGj7vmSP4_old.jpg" alt="old"><figcaption>БЫЛО · текст 0.20</figcaption></figure>
+        <div class="arrow">→</div>
+        <figure><img src="redo_page_assets/oQIGj7vmSP4_new.jpg" data-full="redo_page_assets/oQIGj7vmSP4_new.jpg" alt="new"><figcaption>СТАЛО · текст 0.30 · поставлен, sar ✓</figcaption></figure>
+      </div>
+      <div class="meta"><b>Aswang — How Long Is Her Tongue?</b><br><span class="hook">«HOW LONG IS HER TONGUE?»</span><br><span class="vid">oQIGj7vmSP4</span></div>
+      <textarea data-k="redo_oQIGj7vmSP4" placeholder="Комментарий..."></textarea>
+    </div>
+    <div class="card">
+      <div class="pair">
+        <figure><img src="redo_page_assets/iEkGefD3Vlc_old.jpg" data-full="redo_page_assets/iEkGefD3Vlc_old.jpg" alt="old"><figcaption>БЫЛО · текст 0.06</figcaption></figure>
+        <div class="arrow">→</div>
+        <figure><img src="redo_page_assets/iEkGefD3Vlc_new.jpg" data-full="redo_page_assets/iEkGefD3Vlc_new.jpg" alt="new"><figcaption>СТАЛО · текст 0.30 · поставлен, sar ✓</figcaption></figure>
+      </div>
+      <div class="meta"><b>Penanggalan — Her Head Goes Hunting</b><br><span class="hook">«SHE SLEEPS. HER HEAD GOES HUNTING?»</span><br><span class="vid">iEkGefD3Vlc</span></div>
+      <textarea data-k="redo_iEkGefD3Vlc" placeholder="Комментарий..."></textarea>
+    </div>
+    <div class="card">
+      <div class="pair">
+        <figure><img src="redo_page_assets/95rI9GNlIeM_old.jpg" data-full="redo_page_assets/95rI9GNlIeM_old.jpg" alt="old"><figcaption>БЫЛО · текст 0.25</figcaption></figure>
+        <div class="arrow">→</div>
+        <figure><img src="redo_page_assets/95rI9GNlIeM_new.jpg" data-full="redo_page_assets/95rI9GNlIeM_new.jpg" alt="new"><figcaption>СТАЛО · текст 0.30 · поставлен, sar ✓</figcaption></figure>
+      </div>
+      <div class="meta"><b>Night Hag — Who Is Sitting on Your Chest?</b><br><span class="hook">«WHO IS SITTING ON YOUR CHEST?»</span><br><span class="vid">95rI9GNlIeM</span></div>
+      <textarea data-k="redo_95rI9GNlIeM" placeholder="Комментарий..."></textarea>
+    </div>
+    <div class="card">
+      <div class="pair">
+        <figure><img src="redo_page_assets/0tkAvGB9pWw_old.jpg" data-full="redo_page_assets/0tkAvGB9pWw_old.jpg" alt="old"><figcaption>БЫЛО · текст 0.07</figcaption></figure>
+        <div class="arrow">→</div>
+        <figure><img src="redo_page_assets/0tkAvGB9pWw_new.jpg" data-full="redo_page_assets/0tkAvGB9pWw_new.jpg" alt="new"><figcaption>СТАЛО · текст 0.33 · поставлен, sar ✓</figcaption></figure>
+      </div>
+      <div class="meta"><b>Mothman — It Appears Before Disaster</b><br><span class="hook">«IT APPEARS BEFORE DISASTER STRIKES?»</span><br><span class="vid">0tkAvGB9pWw</span></div>
+      <textarea data-k="redo_0tkAvGB9pWw" placeholder="Комментарий..."></textarea>
+    </div>
+    <div class="card">
+      <div class="pair">
+        <figure><img src="redo_page_assets/edEHpI6does_old.jpg" data-full="redo_page_assets/edEHpI6does_old.jpg" alt="old"><figcaption>БЫЛО · текст 0.07</figcaption></figure>
+        <div class="arrow">→</div>
+        <figure><img src="redo_page_assets/edEHpI6does_new.jpg" data-full="redo_page_assets/edEHpI6does_new.jpg" alt="new"><figcaption>СТАЛО · текст 0.30 · поставлен, sar ✓</figcaption></figure>
+      </div>
+      <div class="meta"><b>Teke Teke — No Legs. Still Faster Than You?</b><br><span class="hook">«NO LEGS. STILL FASTER THAN YOU?»</span><br><span class="vid">edEHpI6does</span></div>
+      <textarea data-k="redo_edEHpI6does" placeholder="Комментарий..."></textarea>
+    </div>
+    <div class="card">
+      <div class="pair">
+        <figure><img src="redo_page_assets/pf19Irehkd4_old.jpg" data-full="redo_page_assets/pf19Irehkd4_old.jpg" alt="old"><figcaption>БЫЛО · текст 0.17</figcaption></figure>
+        <div class="arrow">→</div>
+        <figure><img src="redo_page_assets/pf19Irehkd4_new.jpg" data-full="redo_page_assets/pf19Irehkd4_new.jpg" alt="new"><figcaption>СТАЛО · текст 0.30 · поставлен, sar ✓</figcaption></figure>
+      </div>
+      <div class="meta"><b>Mothman — It Only Warned</b><br><span class="hook">«IT NEVER ATTACKED. IT ONLY WARNED?»</span><br><span class="vid">pf19Irehkd4</span></div>
+      <textarea data-k="redo_pf19Irehkd4" placeholder="Комментарий..."></textarea>
+    </div>
+    <div class="card">
+      <div class="pair">
+        <figure><img src="redo_page_assets/FSpnE_MrjiY_old.jpg" data-full="redo_page_assets/FSpnE_MrjiY_old.jpg" alt="old"><figcaption>БЫЛО · текст 0.06</figcaption></figure>
+        <div class="arrow">→</div>
+        <figure><img src="redo_page_assets/FSpnE_MrjiY_new.jpg" data-full="redo_page_assets/FSpnE_MrjiY_new.jpg" alt="new"><figcaption>СТАЛО · текст 0.30 · поставлен, sar ✓</figcaption></figure>
+      </div>
+      <div class="meta"><b>Bloody Mary — Say Her Name Three Times</b><br><span class="hook">«SAY HER NAME THREE TIMES?»</span><br><span class="vid">FSpnE_MrjiY</span></div>
+      <textarea data-k="redo_FSpnE_MrjiY" placeholder="Комментарий..."></textarea>
+    </div>
+    <div class="card">
+      <div class="pair">
+        <figure><img src="redo_page_assets/lMJYTPRPPL0_old.jpg" data-full="redo_page_assets/lMJYTPRPPL0_old.jpg" alt="old"><figcaption>БЫЛО · текст 0.32</figcaption></figure>
+        <div class="arrow">→</div>
+        <figure><img src="redo_page_assets/lMJYTPRPPL0_new.jpg" data-full="redo_page_assets/lMJYTPRPPL0_new.jpg" alt="new"><figcaption>СТАЛО · текст 0.33 · поставлен, sar ✓</figcaption></figure>
+      </div>
+      <div class="meta"><b>Koschei POV — You Can't Kill Him</b><br><span class="hook">«YOU CAN'T KILL HIM»</span><br><span class="vid">lMJYTPRPPL0</span></div>
+      <textarea data-k="redo_lMJYTPRPPL0" placeholder="Комментарий..."></textarea>
+    </div>
+    <div class="card">
+      <div class="pair">
+        <figure><img src="redo_page_assets/yrrqZ4PD_D8_old.jpg" data-full="redo_page_assets/yrrqZ4PD_D8_old.jpg" alt="old"><figcaption>БЫЛО · текст 0.33</figcaption></figure>
+        <div class="arrow">→</div>
+        <figure><img src="redo_page_assets/yrrqZ4PD_D8_new.jpg" data-full="redo_page_assets/yrrqZ4PD_D8_new.jpg" alt="new"><figcaption>СТАЛО · текст 0.30 · поставлен, sar ✓</figcaption></figure>
+      </div>
+      <div class="meta"><b>Baba Yaga — Who Is the Real Baba Yaga?</b><br><span class="hook">«WHO IS THE REAL BABA YAGA?»</span><br><span class="vid">yrrqZ4PD_D8</span></div>
+      <textarea data-k="redo_yrrqZ4PD_D8" placeholder="Комментарий..."></textarea>
+    </div>
+    <div class="card">
+      <div class="pair">
+        <figure><img src="redo_page_assets/-cgC8xoLcf8_old.jpg" data-full="redo_page_assets/-cgC8xoLcf8_old.jpg" alt="old"><figcaption>БЫЛО · текст 0.31</figcaption></figure>
+        <div class="arrow">→</div>
+        <figure><img src="redo_page_assets/-cgC8xoLcf8_new.jpg" data-full="redo_page_assets/-cgC8xoLcf8_new.jpg" alt="new"><figcaption>СТАЛО · текст 0.30 · поставлен, sar ✓</figcaption></figure>
+      </div>
+      <div class="meta"><b>Black-Eyed Children — Eyes Completely Black</b><br><span class="hook">«WHY ARE THEIR EYES COMPLETELY BLACK?»</span><br><span class="vid">-cgC8xoLcf8</span></div>
+      <textarea data-k="redo_-cgC8xoLcf8" placeholder="Комментарий..."></textarea>
+    </div>
+    <div class="card">
+      <div class="pair">
+        <figure><img src="redo_page_assets/-kfpvcc0BvQ_old.jpg" data-full="redo_page_assets/-kfpvcc0BvQ_old.jpg" alt="old"><figcaption>БЫЛО · текст 0.31</figcaption></figure>
+        <div class="arrow">→</div>
+        <figure><img src="redo_page_assets/-kfpvcc0BvQ_new.jpg" data-full="redo_page_assets/-kfpvcc0BvQ_new.jpg" alt="new"><figcaption>СТАЛО · текст 0.32 · поставлен, sar ✓</figcaption></figure>
+      </div>
+      <div class="meta"><b>Mothman — She Knows Your Name</b><br><span class="hook">«SHE KNOWS YOUR NAME»</span><br><span class="vid">-kfpvcc0BvQ</span></div>
+      <textarea data-k="redo_-kfpvcc0BvQ" placeholder="Комментарий..."></textarea>
+    </div>
+    <div class="card">
+      <div class="pair">
+        <figure><img src="redo_page_assets/BpdPTASRt4E_old.jpg" data-full="redo_page_assets/BpdPTASRt4E_old.jpg" alt="old"><figcaption>БЫЛО · текст 0.31</figcaption></figure>
+        <div class="arrow">→</div>
+        <figure><img src="redo_page_assets/BpdPTASRt4E_new.jpg" data-full="redo_page_assets/BpdPTASRt4E_new.jpg" alt="new"><figcaption>СТАЛО · текст 0.33 · поставлен, sar ✓</figcaption></figure>
+      </div>
+      <div class="meta"><b>Chernobog — The Erased God</b><br><span class="hook">«THE ERASED GOD»</span><br><span class="vid">BpdPTASRt4E</span></div>
+      <textarea data-k="redo_BpdPTASRt4E" placeholder="Комментарий..."></textarea>
+    </div>
+    <div class="card">
+      <div class="pair">
+        <figure><img src="redo_page_assets/SeHR-QB7JOs_old.jpg" data-full="redo_page_assets/SeHR-QB7JOs_old.jpg" alt="old"><figcaption>БЫЛО · текст 0.32</figcaption></figure>
+        <div class="arrow">→</div>
+        <figure><img src="redo_page_assets/SeHR-QB7JOs_new.jpg" data-full="redo_page_assets/SeHR-QB7JOs_new.jpg" alt="new"><figcaption>СТАЛО · текст 0.33 · поставлен, sar ✓</figcaption></figure>
+      </div>
+      <div class="meta"><b>Krampus — The Christmas Devil</b><br><span class="hook">«THE CHRISTMAS DEVIL»</span><br><span class="vid">SeHR-QB7JOs</span></div>
+      <textarea data-k="redo_SeHR-QB7JOs" placeholder="Комментарий..."></textarea>
+    </div>
+    <div class="card">
+      <div class="pair">
+        <figure><img src="redo_page_assets/GPVzYAcvRy0_old.jpg" data-full="redo_page_assets/GPVzYAcvRy0_old.jpg" alt="old"><figcaption>БЫЛО · текст 0.31</figcaption></figure>
+        <div class="arrow">→</div>
+        <figure><img src="redo_page_assets/GPVzYAcvRy0_new.jpg" data-full="redo_page_assets/GPVzYAcvRy0_new.jpg" alt="new"><figcaption>СТАЛО · текст 0.28 · поставлен, sar ✓</figcaption></figure>
+      </div>
+      <div class="meta"><b>Rokurokubi — Her Neck at Night</b><br><span class="hook">«WHAT HAPPENS TO HER NECK AT NIGHT?»</span><br><span class="vid">GPVzYAcvRy0</span></div>
+      <textarea data-k="redo_GPVzYAcvRy0" placeholder="Комментарий..."></textarea>
+    </div></div>
+<div id="lb"><img id="lbimg"></div>
+<div id="modal"><div class="box"><div style="margin-bottom:8px">Скопируй текст вручную:</div><textarea id="modalText" readonly></textarea><br><button onclick="document.getElementById('modal').style.display='none'">Закрыть</button></div></div>
+<script>
+const tas=[...document.querySelectorAll('textarea[data-k]')];
+function upd(){let n=0;tas.forEach(t=>{if(t.value.trim())n++});document.getElementById('cnt').textContent='Заполнено: '+n}
+tas.forEach(t=>{const k=t.dataset.k;const v=localStorage.getItem(k);if(v)t.value=v;t.addEventListener('input',()=>{localStorage.setItem(k,t.value);upd()})});upd();
+function collect(){let out=[];tas.forEach(t=>{if(t.value.trim())out.push(t.dataset.k+': '+t.value.trim())});return out.join('\n')}
+async function copyText(txt){
+ try{await navigator.clipboard.writeText(txt);return true}catch(e){}
+ try{const ta=document.createElement('textarea');ta.value=txt;document.body.appendChild(ta);ta.select();const ok=document.execCommand('copy');ta.remove();if(ok)return true}catch(e){}
+ const m=document.getElementById('modal');document.getElementById('modalText').value=txt;m.style.display='flex';return false}
+document.getElementById('copyAll').addEventListener('click',async()=>{const txt=collect();if(!txt){alert('Комментариев пока нет');return}if(await copyText(txt))alert('Комменты скопированы')});
+document.getElementById('backup').addEventListener('click',()=>{const blob=new Blob([collect()||'(пусто)'],{type:'text/plain'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='thumb_redo_comments.txt';a.click()});
+const lb=document.getElementById('lb'),lbi=document.getElementById('lbimg');
+document.querySelectorAll('img[data-full]').forEach(im=>im.addEventListener('click',()=>{lbi.src=im.dataset.full;lb.style.display='flex'}));
+lb.addEventListener('click',()=>lb.style.display='none');
+</script></body></html>
