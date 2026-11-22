@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Аудит тамбнейлов Shorts — Whispered Legends</title>
+<style>
+body{background:#111;color:#eee;font-family:system-ui,sans-serif;margin:0;padding:0 10px 90px}
+h1{font-size:20px;margin:14px 4px 4px}
+.sub{color:#aaa;margin:0 4px 10px;font-size:14px}
+.filters{margin:8px 4px}
+.filters button{background:#222;color:#eee;border:1px solid #444;border-radius:16px;padding:6px 14px;margin-right:6px;cursor:pointer}
+.filters button.on{background:#1565c0;border-color:#1565c0}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:12px}
+.card{background:#1c1c1c;border:1px solid #333;border-radius:10px;padding:8px}
+.card img{width:100%;border-radius:6px;cursor:zoom-in;display:block}
+.ttl{font-size:13px;margin:7px 0 4px;line-height:1.3}
+.meta{display:flex;justify-content:space-between;align-items:center;gap:6px}
+.id{font-family:monospace;font-size:11px;color:#9cf}
+.badge{color:#fff;font-size:10px;font-weight:700;padding:2px 7px;border-radius:8px;white-space:nowrap}
+.note{font-size:12px;color:#ffb74d;margin-top:5px;line-height:1.35}
+textarea{width:100%;box-sizing:border-box;margin-top:7px;background:#0d0d0d;color:#eee;border:1px solid #333;border-radius:6px;min-height:34px;font-size:13px}
+#panel{position:fixed;left:0;right:0;bottom:0;background:#1a1a1a;border-top:1px solid #444;padding:10px;display:flex;gap:8px;align-items:center;z-index:50}
+#panel button{background:#1565c0;color:#fff;border:0;border-radius:8px;padding:10px 14px;font-size:14px;cursor:pointer}
+#cnt{color:#aaa;font-size:13px}
+#lb{position:fixed;inset:0;background:rgba(0,0,0,.93);display:none;align-items:center;justify-content:center;z-index:99}
+#lb img{max-height:96vh;max-width:96vw}
+#modal{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;z-index:100;padding:20px}
+#modal textarea{width:100%;height:70vh;background:#000;color:#0f0}
+</style></head><body>
+<h1>Аудит тамбнейлов Shorts — фактические тамбы с YouTube (22.11.2026)</h1>
+<p class="sub">89 шортсов: постеров с надписью — 85, кадров с вшитыми сабами — 4 (трио живого интро + Night Hag-тест), голых кадров без текста — 0. Клик по картинке — зум. Комментарии сохраняются в этом браузере.</p>
+<div class="filters">
+<button class="on" onclick="flt('all',this)">Все (89)</button>
+<button onclick="flt('poster',this)">Постеры (85)</button>
+<button onclick="flt('subs',this)">Кадры с сабами (4)</button>
+</div>
+<div class="grid">
+<div class="card" data-cls="poster">
+<img src="thumbs/lMJYTPRPPL0.jpg" alt="lMJYTPRPPL0" loading="lazy" onclick="zoom(this)">
+<div class="ttl">POV: You&#x27;re Koschei the Deathless — Could You Find His Death? 🕯 #shorts</div>
+<div class="meta"><span class="id">lMJYTPRPPL0</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+
+<textarea data-k="audit_lMJYTPRPPL0" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="poster">
+<img src="thumbs/yrrqZ4PD_D8.jpg" alt="yrrqZ4PD_D8" loading="lazy" onclick="zoom(this)">
+<div class="ttl">Why Is John Wick Called the Baba Yaga? 🪓 The REAL One Is Worse #shorts</div>
+<div class="meta"><span class="id">yrrqZ4PD_D8</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+
+<textarea data-k="audit_yrrqZ4PD_D8" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="poster">
+<img src="thumbs/LAymlk3w1m8.jpg" alt="LAymlk3w1m8" loading="lazy" onclick="zoom(this)">
+<div class="ttl">You Cannot Kill This Man 🕯 Koschei #shorts</div>
+<div class="meta"><span class="id">LAymlk3w1m8</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+
+<textarea data-k="audit_LAymlk3w1m8" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="poster">
+<img src="thumbs/-IxwELtC_hM.jpg" alt="-IxwELtC_hM" loading="lazy" onclick="zoom(this)">
+<div class="ttl">The First Woman Was Erased From History 🖤 Lilith #shorts</div>
+<div class="meta"><span class="id">-IxwELtC_hM</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+
+<textarea data-k="audit_-IxwELtC_hM" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="poster">
+<img src="thumbs/SkdxhIB_7pc.jpg" alt="SkdxhIB_7pc" loading="lazy" onclick="zoom(this)">
+<div class="ttl">Never Bathe After Midnight 🪓 Bannik #shorts</div>
+<div class="meta"><span class="id">SkdxhIB_7pc</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+
+<textarea data-k="audit_SkdxhIB_7pc" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="poster">
+<img src="thumbs/La61tIYZ0Rg.jpg" alt="La61tIYZ0Rg" loading="lazy" onclick="zoom(this)">
+<div class="ttl">Never Eat Human Flesh in the Northern Woods 🌲 Wendigo #shorts</div>
+<div class="meta"><span class="id">La61tIYZ0Rg</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+
+<textarea data-k="audit_La61tIYZ0Rg" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="poster">
+<img src="thumbs/pmy6HTvKjBY.jpg" alt="pmy6HTvKjBY" loading="lazy" onclick="zoom(this)">
+<div class="ttl">The Forest Is Moving You in Circles 🌲 Leshy #shorts</div>
+<div class="meta"><span class="id">pmy6HTvKjBY</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+
+<textarea data-k="audit_pmy6HTvKjBY" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="poster">
+<img src="thumbs/MRts7wH1HEk.jpg" alt="MRts7wH1HEk" loading="lazy" onclick="zoom(this)">
+<div class="ttl">In Navajo country, there&#x27;s a creature you must never name 🌵 #Shorts</div>
+<div class="meta"><span class="id">MRts7wH1HEk</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+
+<textarea data-k="audit_MRts7wH1HEk" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="poster">
+<img src="thumbs/-cgC8xoLcf8.jpg" alt="-cgC8xoLcf8" loading="lazy" onclick="zoom(this)">
+<div class="ttl">A Child Knocks at Your Door After Dark. Don&#x27;t Open It. 🖤 #shorts</div>
+<div class="meta"><span class="id">-cgC8xoLcf8</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+
+<textarea data-k="audit_-cgC8xoLcf8" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="poster">
+<img src="thumbs/M7eaLBJt4iU.jpg" alt="M7eaLBJt4iU" loading="lazy" onclick="zoom(this)">
+<div class="ttl">If You Find Her Body Without a Head, Hide It 🕯 #shorts</div>
+<div class="meta"><span class="id">M7eaLBJt4iU</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+
+<textarea data-k="audit_M7eaLBJt4iU" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="poster">
+<img src="thumbs/j2a_rUJ0uvU.jpg" alt="j2a_rUJ0uvU" loading="lazy" onclick="zoom(this)">
+<div class="ttl">She Barely Eats… Because Her Second Mouth Does 🦷 #shorts</div>
+<div class="meta"><span class="id">j2a_rUJ0uvU</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+
+<textarea data-k="audit_j2a_rUJ0uvU" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="poster">
+<img src="thumbs/f-rHLFN_JOA.jpg" alt="f-rHLFN_JOA" loading="lazy" onclick="zoom(this)">
+<div class="ttl">Never Look at Her Face. Look at Her Feet 👣</div>
+<div class="meta"><span class="id">f-rHLFN_JOA</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+
+<textarea data-k="audit_f-rHLFN_JOA" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="poster">
+<img src="thumbs/bYeZ6cjZK-g.jpg" alt="bYeZ6cjZK-g" loading="lazy" onclick="zoom(this)">
+<div class="ttl">If Your Reflection Blinks First, Don&#x27;t Look Away 🩸</div>
+<div class="meta"><span class="id">bYeZ6cjZK-g</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+
+<textarea data-k="audit_bYeZ6cjZK-g" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="poster">
+<img src="thumbs/ogY028xsZAM.jpg" alt="ogY028xsZAM" loading="lazy" onclick="zoom(this)">
+<div class="ttl">Never Follow a Beautiful Woman Until You See Her Face 🐴</div>
+<div class="meta"><span class="id">ogY028xsZAM</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+
+<textarea data-k="audit_ogY028xsZAM" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="subs">
+<img src="thumbs/AQx947alnJU.jpg" alt="AQx947alnJU" loading="lazy" onclick="zoom(this)">
+<div class="ttl">You Wake Up Paralyzed. She&#x27;s Sitting on Your Chest.</div>
+<div class="meta"><span class="id">AQx947alnJU</span><span class="badge" style="background:#c62828">КАДР С САБАМИ</span></div>
+<div class="note">тестовый ролик Night Hag: кадр с караоке-сабами вместо постера</div>
+<textarea data-k="audit_AQx947alnJU" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="subs">
+<img src="thumbs/DDlfyluWBwo.jpg" alt="DDlfyluWBwo" loading="lazy" onclick="zoom(this)">
+<div class="ttl">If a Deer Stares at You With Both Eyes, It Is Not a Deer</div>
+<div class="meta"><span class="id">DDlfyluWBwo</span><span class="badge" style="background:#c62828">КАДР С САБАМИ</span></div>
+<div class="note">трио живого интро: кадр финала с бейджем USA и сабами — заменяется новым постером (задача trio-posters)</div>
+<textarea data-k="audit_DDlfyluWBwo" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="subs">
+<img src="thumbs/6wUSmS9Ul4Q.jpg" alt="6wUSmS9Ul4Q" loading="lazy" onclick="zoom(this)">
+<div class="ttl">If You Knock Three Times, Hanako-san Will Answer</div>
+<div class="meta"><span class="id">6wUSmS9Ul4Q</span><span class="badge" style="background:#c62828">КАДР С САБАМИ</span></div>
+<div class="note">трио живого интро: кадр финала с бейджем JAPAN и сабами — заменяется новым постером</div>
+<textarea data-k="audit_6wUSmS9Ul4Q" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="subs">
+<img src="thumbs/6IHG0Yp41GM.jpg" alt="6IHG0Yp41GM" loading="lazy" onclick="zoom(this)">
+<div class="ttl">Yuki-onna, yokai, urban legend, horror story, scary stories, horror shorts, Japanese folklore</div>
+<div class="meta"><span class="id">6IHG0Yp41GM</span><span class="badge" style="background:#c62828">КАДР С САБАМИ</span></div>
+<div class="note">трио живого интро: кадр финала с бейджем JAPAN и сабами — заменяется новым постером</div>
+<textarea data-k="audit_6IHG0Yp41GM" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="poster">
+<img src="thumbs/uDf972eqkXY.jpg" alt="uDf972eqkXY" loading="lazy" onclick="zoom(this)">
+<div class="ttl">If You Hear a Woman Scream in These Woods, Don&#x27;t Answer #WampusCat #UrbanLegend #HorrorShorts</div>
+<div class="meta"><span class="id">uDf972eqkXY</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+
+<textarea data-k="audit_uDf972eqkXY" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="poster">
+<img src="thumbs/HbcZ7JEUCIg.jpg" alt="HbcZ7JEUCIg" loading="lazy" onclick="zoom(this)">
+<div class="ttl">Baba Yaga — the Witch in the Hut on Chicken Legs 🏚️ #shorts</div>
+<div class="meta"><span class="id">HbcZ7JEUCIg</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+
+<textarea data-k="audit_HbcZ7JEUCIg" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="poster">
+<img src="thumbs/BjM50PEptcU.jpg" alt="BjM50PEptcU" loading="lazy" onclick="zoom(this)">
+<div class="ttl">Koschei the Deathless — the Sorcerer Who Cannot Be Killed 💀 #shorts</div>
+<div class="meta"><span class="id">BjM50PEptcU</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+
+<textarea data-k="audit_BjM50PEptcU" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="poster">
+<img src="thumbs/Hr0LlURgCJI.jpg" alt="Hr0LlURgCJI" loading="lazy" onclick="zoom(this)">
+<div class="ttl">The Kappa — Japan&#x27;s River Demon That Drags You Under 🌊 #shorts</div>
+<div class="meta"><span class="id">Hr0LlURgCJI</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+
+<textarea data-k="audit_Hr0LlURgCJI" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="poster">
+<img src="thumbs/JHIvjoK2NAs.jpg" alt="JHIvjoK2NAs" loading="lazy" onclick="zoom(this)">
+<div class="ttl">Never Answer the Song from the Water 🌊 Rusalka | Slavic Folklore #shorts</div>
+<div class="meta"><span class="id">JHIvjoK2NAs</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+
+<textarea data-k="audit_JHIvjoK2NAs" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="poster">
+<img src="thumbs/EIftldRb_lU.jpg" alt="EIftldRb_lU" loading="lazy" onclick="zoom(this)">
+<div class="ttl">Never Turn Around When You Hear the Footsteps 👹 Oni | Japanese Folklore #shorts</div>
+<div class="meta"><span class="id">EIftldRb_lU</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+
+<textarea data-k="audit_EIftldRb_lU" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="poster">
+<img src="thumbs/nnY5fdSBGA4.jpg" alt="nnY5fdSBGA4" loading="lazy" onclick="zoom(this)">
+<div class="ttl">Get Lost in These Woods and the Leshy Will Never Let You Leave 🌲 Slavic Folklore #shorts</div>
+<div class="meta"><span class="id">nnY5fdSBGA4</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+
+<textarea data-k="audit_nnY5fdSBGA4" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="poster">
+<img src="thumbs/1A1_G6v1HKw.jpg" alt="1A1_G6v1HKw" loading="lazy" onclick="zoom(this)">
+<div class="ttl">Every Year the Village Sacrificed a Daughter to It 🐉 Yamata-no-Orochi | Japanese Myth #shorts</div>
+<div class="meta"><span class="id">1A1_G6v1HKw</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+
+<textarea data-k="audit_1A1_G6v1HKw" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="poster">
+<img src="thumbs/VzU15nEqQUI.jpg" alt="VzU15nEqQUI" loading="lazy" onclick="zoom(this)">
+<div class="ttl">You Wake at 3AM and Can&#x27;t Move — Something Is on Your Chest 🪆 Kikimora | Slavic Folklore #shorts</div>
+<div class="meta"><span class="id">VzU15nEqQUI</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+
+<textarea data-k="audit_VzU15nEqQUI" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="poster">
+<img src="thumbs/qXdNryaJQqQ.jpg" alt="qXdNryaJQqQ" loading="lazy" onclick="zoom(this)">
+<div class="ttl">Baba Yaga — The Witch With Iron Teeth 🕯 | Slavic Legend #shorts</div>
+<div class="meta"><span class="id">qXdNryaJQqQ</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+
+<textarea data-k="audit_qXdNryaJQqQ" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="poster">
+<img src="thumbs/rr_4nAzOFu4.jpg" alt="rr_4nAzOFu4" loading="lazy" onclick="zoom(this)">
+<div class="ttl">Never Swim in Still Water 🌊 The Vodyanoy | Dark Slavic Folklore #shorts</div>
+<div class="meta"><span class="id">rr_4nAzOFu4</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+
+<textarea data-k="audit_rr_4nAzOFu4" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="poster">
+<img src="thumbs/dD9IpLowwv0.jpg" alt="dD9IpLowwv0" loading="lazy" onclick="zoom(this)">
+<div class="ttl">Cut One Head Off, Two Grow Back 🐉 Zmey Gorynych | Dark Slavic Folklore #shorts</div>
+<div class="meta"><span class="id">dD9IpLowwv0</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+
+<textarea data-k="audit_dD9IpLowwv0" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="poster">
+<img src="thumbs/m2b0m5waVng.jpg" alt="m2b0m5waVng" loading="lazy" onclick="zoom(this)">
+<div class="ttl">Never Cross That Field at Night 🌾 The Polevik | Dark Slavic Folklore #shorts</div>
+<div class="meta"><span class="id">m2b0m5waVng</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+
+<textarea data-k="audit_m2b0m5waVng" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="poster">
+<img src="thumbs/dI34JPc4Wjc.jpg" alt="dI34JPc4Wjc" loading="lazy" onclick="zoom(this)">
+<div class="ttl">When Everything Fails at Once, Blame Her 👁 Likho | Dark Slavic Folklore #shorts</div>
+<div class="meta"><span class="id">dI34JPc4Wjc</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+
+<textarea data-k="audit_dI34JPc4Wjc" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="poster">
+<img src="thumbs/h9FEBUwKazA.jpg" alt="h9FEBUwKazA" loading="lazy" onclick="zoom(this)">
+<div class="ttl">One Whistle, and Grown Men Drop Dead 🌲 Solovei the Whistler | Dark Slavic Folklore #shorts</div>
+<div class="meta"><span class="id">h9FEBUwKazA</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+
+<textarea data-k="audit_h9FEBUwKazA" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="poster">
+<img src="thumbs/pJ6YeQ9iLXo.jpg" alt="pJ6YeQ9iLXo" loading="lazy" onclick="zoom(this)">
+<div class="ttl">One Look From This Demon and You Die 👁 Viy | Dark Slavic Folklore #shorts</div>
+<div class="meta"><span class="id">pJ6YeQ9iLXo</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+
+<textarea data-k="audit_pJ6YeQ9iLXo" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="poster">
+<img src="thumbs/c5ktbZIszN0.jpg" alt="c5ktbZIszN0" loading="lazy" onclick="zoom(this)">
+<div class="ttl">Her Song Kills You Where You Stand 🖤 Sirin | Dark Slavic Folklore #shorts</div>
+<div class="meta"><span class="id">c5ktbZIszN0</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+
+<textarea data-k="audit_c5ktbZIszN0" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="poster">
+<img src="thumbs/ujMX9IyBa-k.jpg" alt="ujMX9IyBa-k" loading="lazy" onclick="zoom(this)">
+<div class="ttl">She Walked Into Baba Yaga&#x27;s Forest to Die 🖤 Full Tale Tonight | Vasilisa #shorts</div>
+<div class="meta"><span class="id">ujMX9IyBa-k</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+
+<textarea data-k="audit_ujMX9IyBa-k" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="poster">
+<img src="thumbs/-kfpvcc0BvQ.jpg" alt="-kfpvcc0BvQ" loading="lazy" onclick="zoom(this)">
+<div class="ttl">A Dead Woman Waits in the Swamp for You 🖤 Kikimora Bolotnaya | Dark Slavic Folklore #shorts</div>
+<div class="meta"><span class="id">-kfpvcc0BvQ</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+
+<textarea data-k="audit_-kfpvcc0BvQ" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="poster">
+<img src="thumbs/ajRqZYjTv4o.jpg" alt="ajRqZYjTv4o" loading="lazy" onclick="zoom(this)">
+<div class="ttl">The Slavs Had a God of Light. They Also Had Him 🖤 Chernobog | Dark Slavic Folklore</div>
+<div class="meta"><span class="id">ajRqZYjTv4o</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+
+<textarea data-k="audit_ajRqZYjTv4o" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="poster">
+<img src="thumbs/13Q7T6EdQ8w.jpg" alt="13Q7T6EdQ8w" loading="lazy" onclick="zoom(this)">
+<div class="ttl">Every Spring They Drown This Goddess ❄️ Morana | Dark Slavic Folklore #shorts</div>
+<div class="meta"><span class="id">13Q7T6EdQ8w</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+
+<textarea data-k="audit_13Q7T6EdQ8w" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="poster">
+<img src="thumbs/8Oou7kOzYmk.jpg" alt="8Oou7kOzYmk" loading="lazy" onclick="zoom(this)">
+<div class="ttl">Baba Yaga vs Koschei the Deathless: Who Wins? 🕯 Dark Slavic Folklore</div>
+<div class="meta"><span class="id">8Oou7kOzYmk</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+
+<textarea data-k="audit_8Oou7kOzYmk" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="poster">
+<img src="thumbs/Z2O-rP-W4mk.jpg" alt="Z2O-rP-W4mk" loading="lazy" onclick="zoom(this)">
+<div class="ttl">The God Who Hunts a Serpent With Lightning ⚡ Perun | Dark Slavic Folklore #shorts</div>
+<div class="meta"><span class="id">Z2O-rP-W4mk</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+
+<textarea data-k="audit_Z2O-rP-W4mk" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="poster">
+<img src="thumbs/0rMfcTGo9qw.jpg" alt="0rMfcTGo9qw" loading="lazy" onclick="zoom(this)">
+<div class="ttl">The God Who Owns Your Cattle, Your Gold, and Your Soul 🖤 Veles | Dark Slavic Folklore #shorts</div>
+<div class="meta"><span class="id">0rMfcTGo9qw</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+
+<textarea data-k="audit_0rMfcTGo9qw" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="poster">
+<img src="thumbs/j1N0AeKsp5o.jpg" alt="j1N0AeKsp5o" loading="lazy" onclick="zoom(this)">
+<div class="ttl">She Spins a Thread With Your Name — Cut It, and You Die 🧵Mokosh. #shorts</div>
+<div class="meta"><span class="id">j1N0AeKsp5o</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+
+<textarea data-k="audit_j1N0AeKsp5o" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="poster">
+<img src="thumbs/kBj0uFqOQOM.jpg" alt="kBj0uFqOQOM" loading="lazy" onclick="zoom(this)">
+<div class="ttl">The Sun-God Who Might One Day Simply Stop Giving ☀️ Dazhbog | Dark Slavic Folklore #shorts</div>
+<div class="meta"><span class="id">kBj0uFqOQOM</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+
+<textarea data-k="audit_kBj0uFqOQOM" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="poster">
+<img src="thumbs/2K_zmFlNcjI.jpg" alt="2K_zmFlNcjI" loading="lazy" onclick="zoom(this)">
+<div class="ttl">Two Goddesses Chain a Hound That Will Devour the World 🌌 Zorya | Dark Slavic Folklore</div>
+<div class="meta"><span class="id">2K_zmFlNcjI</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+
+<textarea data-k="audit_2K_zmFlNcjI" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="poster">
+<img src="thumbs/8Wu30SIItIY.jpg" alt="8Wu30SIItIY" loading="lazy" onclick="zoom(this)">
+<div class="ttl">The God Who Forged the Sun and Threw It Into the Sky ☀️🔨 Svarog | Dark Slavic Folklore #shorts</div>
+<div class="meta"><span class="id">8Wu30SIItIY</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+
+<textarea data-k="audit_8Wu30SIItIY" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="poster">
+<img src="thumbs/qKx5UExvbB0.jpg" alt="qKx5UExvbB0" loading="lazy" onclick="zoom(this)">
+<div class="ttl">The God Who Must Die Every Single Year 🌾 Yarilo | Dark Slavic Folklore #shorts</div>
+<div class="meta"><span class="id">qKx5UExvbB0</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+
+<textarea data-k="audit_qKx5UExvbB0" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="poster">
+<img src="thumbs/BpdPTASRt4E.jpg" alt="BpdPTASRt4E" loading="lazy" onclick="zoom(this)">
+<div class="ttl">The Fire-Hound the Gods Set to Guard the World 🔥 Simargl | Dark Slavic Folklore #shorts</div>
+<div class="meta"><span class="id">BpdPTASRt4E</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+
+<textarea data-k="audit_BpdPTASRt4E" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="poster">
+<img src="thumbs/Q6Gt0D0bd3Y.jpg" alt="Q6Gt0D0bd3Y" loading="lazy" onclick="zoom(this)">
+<div class="ttl">You Drowned Years Ago — You Just Don&#x27;t Know It Yet 🖤 Kikimora #shorts</div>
+<div class="meta"><span class="id">Q6Gt0D0bd3Y</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+
+<textarea data-k="audit_Q6Gt0D0bd3Y" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="poster">
+<img src="thumbs/G6JFed_0IeA.jpg" alt="G6JFed_0IeA" loading="lazy" onclick="zoom(this)">
+<div class="ttl">The Four-Faced God Who Sees You From Every Side 🗡 Svetovid | Dark Slavic Folklore #shorts</div>
+<div class="meta"><span class="id">G6JFed_0IeA</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+
+<textarea data-k="audit_G6JFed_0IeA" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="poster">
+<img src="thumbs/S72jC0jibF0.jpg" alt="S72jC0jibF0" loading="lazy" onclick="zoom(this)">
+<div class="ttl">The Slavic God Whose Grandsons Are the Winds 🌬 Stribog | Dark Slavic Folklore #shorts</div>
+<div class="meta"><span class="id">S72jC0jibF0</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+
+<textarea data-k="audit_S72jC0jibF0" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="poster">
+<img src="thumbs/SvbYuccs4Ks.jpg" alt="SvbYuccs4Ks" loading="lazy" onclick="zoom(this)">
+<div class="ttl">The Slavic Goddess of Death vs the Sun God ❄️ Morana vs Dazhbog #shorts</div>
+<div class="meta"><span class="id">SvbYuccs4Ks</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+
+<textarea data-k="audit_SvbYuccs4Ks" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="poster">
+<img src="thumbs/4roAwkir2TA.jpg" alt="4roAwkir2TA" loading="lazy" onclick="zoom(this)">
+<div class="ttl">The Most Dangerous Place in the Slavic Village Wasn&#x27;t the Forest 🔥 Bannik #shorts</div>
+<div class="meta"><span class="id">4roAwkir2TA</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+
+<textarea data-k="audit_4roAwkir2TA" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="poster">
+<img src="thumbs/bVev2pIgfIU.jpg" alt="bVev2pIgfIU" loading="lazy" onclick="zoom(this)">
+<div class="ttl">No Family Left an Empty House Without Inviting One Thing 🕯 Domovoi #shorts</div>
+<div class="meta"><span class="id">bVev2pIgfIU</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+
+<textarea data-k="audit_bVev2pIgfIU" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="poster">
+<img src="thumbs/agpJG0Z-8fM.jpg" alt="agpJG0Z-8fM" loading="lazy" onclick="zoom(this)">
+<div class="ttl">POV: You&#x27;re Baba Yaga on a Busy Night in the Hut on Chicken Legs 🕯 #shorts</div>
+<div class="meta"><span class="id">agpJG0Z-8fM</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+
+<textarea data-k="audit_agpJG0Z-8fM" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="poster">
+<img src="thumbs/SeHR-QB7JOs.jpg" alt="SeHR-QB7JOs" loading="lazy" onclick="zoom(this)">
+<div class="ttl">The Christmas Demon That Drags Bad Children Straight to Hell 🔥 Krampus #shorts</div>
+<div class="meta"><span class="id">SeHR-QB7JOs</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+
+<textarea data-k="audit_SeHR-QB7JOs" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="poster">
+<img src="thumbs/uLbEgrNgHGw.jpg" alt="uLbEgrNgHGw" loading="lazy" onclick="zoom(this)">
+<div class="ttl">The First Woman Refused to Obey — and Became a Demon 🖤 Lilith #shorts</div>
+<div class="meta"><span class="id">uLbEgrNgHGw</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+
+<textarea data-k="audit_uLbEgrNgHGw" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="poster">
+<img src="thumbs/0wOcef4Ss0U.jpg" alt="0wOcef4Ss0U" loading="lazy" onclick="zoom(this)">
+<div class="ttl">The Demon From The Exorcist Was Real — and Far Older 🩸 Pazuzu #shorts</div>
+<div class="meta"><span class="id">0wOcef4Ss0U</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+
+<textarea data-k="audit_0wOcef4Ss0U" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="poster">
+<img src="thumbs/fd2TcObKks4.jpg" alt="fd2TcObKks4" loading="lazy" onclick="zoom(this)">
+<div class="ttl">The Demon of Hunger That Was Once a Man 🖤 Wendigo #shorts</div>
+<div class="meta"><span class="id">fd2TcObKks4</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+
+<textarea data-k="audit_fd2TcObKks4" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="poster">
+<img src="thumbs/pMverc93hPQ.jpg" alt="pMverc93hPQ" loading="lazy" onclick="zoom(this)">
+<div class="ttl">The Deadliest Hour Wasn&#x27;t Midnight — It Was Noon 🌾 Poludnitsa #shorts</div>
+<div class="meta"><span class="id">pMverc93hPQ</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+
+<textarea data-k="audit_pMverc93hPQ" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="poster">
+<img src="thumbs/s8hV3PPzemk.jpg" alt="s8hV3PPzemk" loading="lazy" onclick="zoom(this)">
+<div class="ttl">The God Who Demanded Child Sacrifice 🔥 Moloch #shorts</div>
+<div class="meta"><span class="id">s8hV3PPzemk</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+
+<textarea data-k="audit_s8hV3PPzemk" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="poster">
+<img src="thumbs/pVBWhn4jM_0.jpg" alt="pVBWhn4jM_0" loading="lazy" onclick="zoom(this)">
+<div class="ttl">Zmey Gorynych vs Koschei the Deathless 🐉🔥 Fire vs Immortality #shorts</div>
+<div class="meta"><span class="id">pVBWhn4jM_0</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+
+<textarea data-k="audit_pVBWhn4jM_0" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="poster">
+<img src="thumbs/hsA4TWD_r28.jpg" alt="hsA4TWD_r28" loading="lazy" onclick="zoom(this)">
+<div class="ttl">The Lord of the Flies Was Once a God 🪰 Beelzebub #shorts</div>
+<div class="meta"><span class="id">hsA4TWD_r28</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+
+<textarea data-k="audit_hsA4TWD_r28" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="poster">
+<img src="thumbs/_dJO53n9Jb0.jpg" alt="_dJO53n9Jb0" loading="lazy" onclick="zoom(this)">
+<div class="ttl">They Drowned Their Own Goddess Every Spring 🌾 Morana #shorts</div>
+<div class="meta"><span class="id">_dJO53n9Jb0</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+
+<textarea data-k="audit__dJO53n9Jb0" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="poster">
+<img src="thumbs/ok_iuOqj91Q.jpg" alt="ok_iuOqj91Q" loading="lazy" onclick="zoom(this)">
+<div class="ttl">This Demon Kills the Groom on the Wedding Night 🔥 Asmodeus #shorts</div>
+<div class="meta"><span class="id">ok_iuOqj91Q</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+
+<textarea data-k="audit_ok_iuOqj91Q" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="poster">
+<img src="thumbs/5rQF1tUJwvM.jpg" alt="5rQF1tUJwvM" loading="lazy" onclick="zoom(this)">
+<div class="ttl">You&#x27;ve Been Praying to a King of Hell 👑 Baal #shorts</div>
+<div class="meta"><span class="id">5rQF1tUJwvM</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+
+<textarea data-k="audit_5rQF1tUJwvM" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="poster">
+<img src="thumbs/wqEvDngmEcU.jpg" alt="wqEvDngmEcU" loading="lazy" onclick="zoom(this)">
+<div class="ttl">Something Rules the Pit at the Bottom of Hell 🕳 Abaddon #shorts</div>
+<div class="meta"><span class="id">wqEvDngmEcU</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+
+<textarea data-k="audit_wqEvDngmEcU" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="poster">
+<img src="thumbs/LeRGrlB6dxo.jpg" alt="LeRGrlB6dxo" loading="lazy" onclick="zoom(this)">
+<div class="ttl">China Had Zombies First 🧟 The Jiangshi #shorts</div>
+<div class="meta"><span class="id">LeRGrlB6dxo</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+
+<textarea data-k="audit_LeRGrlB6dxo" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="poster">
+<img src="thumbs/QYTqYZuwWgU.jpg" alt="QYTqYZuwWgU" loading="lazy" onclick="zoom(this)">
+<div class="ttl">The Angel Who Refused to Bow and Became the Devil 🔥 Iblis #shorts</div>
+<div class="meta"><span class="id">QYTqYZuwWgU</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+
+<textarea data-k="audit_QYTqYZuwWgU" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="poster">
+<img src="thumbs/BwfOBdYCo-4.jpg" alt="BwfOBdYCo-4" loading="lazy" onclick="zoom(this)">
+<div class="ttl">The Dead That Won&#x27;t Stay Buried 🪦 The Draugr #shorts</div>
+<div class="meta"><span class="id">BwfOBdYCo-4</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+
+<textarea data-k="audit_BwfOBdYCo-4" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="poster">
+<img src="thumbs/IFwTKjhWUhM.jpg" alt="IFwTKjhWUhM" loading="lazy" onclick="zoom(this)">
+<div class="ttl">The First Vampire Was Worse Than Any Zombie 🧛 The Upyr #shorts</div>
+<div class="meta"><span class="id">IFwTKjhWUhM</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+
+<textarea data-k="audit_IFwTKjhWUhM" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="poster">
+<img src="thumbs/rYyCj00mSN4.jpg" alt="rYyCj00mSN4" loading="lazy" onclick="zoom(this)">
+<div class="ttl">Satan Names His Demons 🔥 #shorts</div>
+<div class="meta"><span class="id">rYyCj00mSN4</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+<div class="note">постер стоит (THE BULL DEMON DEMANDS A SACRIFICE?), надпись мелкая у нижнего края</div>
+<textarea data-k="audit_rYyCj00mSN4" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="poster">
+<img src="thumbs/JRsEySa0S70.jpg" alt="JRsEySa0S70" loading="lazy" onclick="zoom(this)">
+<div class="ttl">If She Never Lets You See Her Feet, Run 🦊 #shorts</div>
+<div class="meta"><span class="id">JRsEySa0S70</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+
+<textarea data-k="audit_JRsEySa0S70" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="poster">
+<img src="thumbs/mDjq4H4FYfA.jpg" alt="mDjq4H4FYfA" loading="lazy" onclick="zoom(this)">
+<div class="ttl">If She Asks &#x27;Am I Beautiful?&#x27; There&#x27;s No Safe Answer 😷 #shorts</div>
+<div class="meta"><span class="id">mDjq4H4FYfA</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+
+<textarea data-k="audit_mDjq4H4FYfA" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="poster">
+<img src="thumbs/nbbRByBgtK4.jpg" alt="nbbRByBgtK4" loading="lazy" onclick="zoom(this)">
+<div class="ttl">A Voice in the Bathroom Asks: Red or Blue? 🔴 #shorts</div>
+<div class="meta"><span class="id">nbbRByBgtK4</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+
+<textarea data-k="audit_nbbRByBgtK4" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="poster">
+<img src="thumbs/CTmZnYUQntQ.jpg" alt="CTmZnYUQntQ" loading="lazy" onclick="zoom(this)">
+<div class="ttl">If You Hear It Dragging Behind You, Don&#x27;t Turn Around 🩸 #shorts</div>
+<div class="meta"><span class="id">CTmZnYUQntQ</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+
+<textarea data-k="audit_CTmZnYUQntQ" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="poster">
+<img src="thumbs/8pYGj3sXRPE.jpg" alt="8pYGj3sXRPE" loading="lazy" onclick="zoom(this)">
+<div class="ttl">If you hear your name in the trees tonight… don&#x27;t answer ❄️ #Shorts</div>
+<div class="meta"><span class="id">8pYGj3sXRPE</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+
+<textarea data-k="audit_8pYGj3sXRPE" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="poster">
+<img src="thumbs/ofkO8WW-szs.jpg" alt="ofkO8WW-szs" loading="lazy" onclick="zoom(this)">
+<div class="ttl">By night she splits in half and leaves her legs behind to hunt you 🦇 #Shorts</div>
+<div class="meta"><span class="id">ofkO8WW-szs</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+
+<textarea data-k="audit_ofkO8WW-szs" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="poster">
+<img src="thumbs/GPVzYAcvRy0.jpg" alt="GPVzYAcvRy0" loading="lazy" onclick="zoom(this)">
+<div class="ttl">She&#x27;s the perfect wife… until her head leaves her body at night 😱 #Shorts</div>
+<div class="meta"><span class="id">GPVzYAcvRy0</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+
+<textarea data-k="audit_GPVzYAcvRy0" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="poster">
+<img src="thumbs/oQIGj7vmSP4.jpg" alt="oQIGj7vmSP4" loading="lazy" onclick="zoom(this)">
+<div class="ttl">In the Philippines, the monster next door looks just like you 🏚️ #Shorts</div>
+<div class="meta"><span class="id">oQIGj7vmSP4</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+
+<textarea data-k="audit_oQIGj7vmSP4" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="poster">
+<img src="thumbs/iEkGefD3Vlc.jpg" alt="iEkGefD3Vlc" loading="lazy" onclick="zoom(this)">
+<div class="ttl">At Night Her Head Leaves Her Body to Hunt 🩸 #shorts</div>
+<div class="meta"><span class="id">iEkGefD3Vlc</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+<div class="note">постер волны генераций; в sar/maxres фраза обрезана по краям (текст шире кадра)</div>
+<textarea data-k="audit_iEkGefD3Vlc" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="poster">
+<img src="thumbs/s32-Uul8ZRo.jpg" alt="s32-Uul8ZRo" loading="lazy" onclick="zoom(this)">
+<div class="ttl">Why South Africans Raise Their Beds on Bricks 🧱 #shorts</div>
+<div class="meta"><span class="id">s32-Uul8ZRo</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+
+<textarea data-k="audit_s32-Uul8ZRo" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="poster">
+<img src="thumbs/95rI9GNlIeM.jpg" alt="95rI9GNlIeM" loading="lazy" onclick="zoom(this)">
+<div class="ttl">If You Wake Up Paralyzed, Keep Your Eyes Closed 👁 #shorts</div>
+<div class="meta"><span class="id">95rI9GNlIeM</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+
+<textarea data-k="audit_95rI9GNlIeM" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="poster">
+<img src="thumbs/lSLhgtCDs6o.jpg" alt="lSLhgtCDs6o" loading="lazy" onclick="zoom(this)">
+<div class="ttl">If a Woman Removes Her Eyes, You Have Five Seconds to Run 🐍</div>
+<div class="meta"><span class="id">lSLhgtCDs6o</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+
+<textarea data-k="audit_lSLhgtCDs6o" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="poster">
+<img src="thumbs/OszRcvqjCb4.jpg" alt="OszRcvqjCb4" loading="lazy" onclick="zoom(this)">
+<div class="ttl">OLD no-intro - Never Follow a Beautiful Woman Until You See Her Face 🐴</div>
+<div class="meta"><span class="id">OszRcvqjCb4</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+
+<textarea data-k="audit_OszRcvqjCb4" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="poster">
+<img src="thumbs/0tkAvGB9pWw.jpg" alt="0tkAvGB9pWw" loading="lazy" onclick="zoom(this)">
+<div class="ttl">If You See Two Red Eyes Watching You in the Dark, Don&#x27;t Stare Back</div>
+<div class="meta"><span class="id">0tkAvGB9pWw</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+
+<textarea data-k="audit_0tkAvGB9pWw" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="poster">
+<img src="thumbs/edEHpI6does.jpg" alt="edEHpI6does" loading="lazy" onclick="zoom(this)">
+<div class="ttl">Teke Teke [Urban Legends] — She Drags Herself Faster Than You Can Run</div>
+<div class="meta"><span class="id">edEHpI6does</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+
+<textarea data-k="audit_edEHpI6does" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="poster">
+<img src="thumbs/pf19Irehkd4.jpg" alt="pf19Irehkd4" loading="lazy" onclick="zoom(this)">
+<div class="ttl">Mothman Watched for 13 Months. Then the Bridge Fell.</div>
+<div class="meta"><span class="id">pf19Irehkd4</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+
+<textarea data-k="audit_pf19Irehkd4" placeholder="Комментарий..."></textarea>
+</div>
+<div class="card" data-cls="poster">
+<img src="thumbs/FSpnE_MrjiY.jpg" alt="FSpnE_MrjiY" loading="lazy" onclick="zoom(this)">
+<div class="ttl">Bloody Mary: the game?</div>
+<div class="meta"><span class="id">FSpnE_MrjiY</span><span class="badge" style="background:#2e7d32">ПОСТЕР</span></div>
+
+<textarea data-k="audit_FSpnE_MrjiY" placeholder="Комментарий..."></textarea>
+</div>
+</div>
+<div id="panel"><button onclick="copyAll()">📋 Скопировать все комменты</button><button onclick="backup()" style="background:#37474f">💾 Резервная копия</button><span id="cnt"></span></div>
+<div id="lb" onclick="this.style.display='none'"><img id="lbimg"></div>
+<div id="modal"><p>Не удалось скопировать автоматически — скопируйте вручную:</p><textarea id="mtext"></textarea><button onclick="document.getElementById('modal').style.display='none'">Закрыть</button></div>
+<script>
+function zoom(im){var lb=document.getElementById('lb');document.getElementById('lbimg').src=im.src;lb.style.display='flex';}
+function flt(c,b){document.querySelectorAll('.filters button').forEach(x=>x.classList.remove('on'));b.classList.add('on');
+document.querySelectorAll('.card').forEach(k=>{k.style.display=(c=='all'||k.dataset.cls==c)?'':'none';});}
+function upd(){var n=0;document.querySelectorAll('textarea[data-k]').forEach(t=>{if(t.value.trim())n++;});
+document.getElementById('cnt').textContent='Комментов: '+n;}
+document.querySelectorAll('textarea[data-k]').forEach(t=>{var v=localStorage.getItem(t.dataset.k);if(v)t.value=v;
+t.addEventListener('input',()=>{localStorage.setItem(t.dataset.k,t.value);upd();});});
+upd();
+function collect(){var out=[];document.querySelectorAll('.card').forEach(k=>{var t=k.querySelector('textarea');
+if(t.value.trim()){var id=k.querySelector('.id').textContent;var ttl=k.querySelector('.ttl').textContent;out.push(id+' | '+ttl+'\n'+t.value.trim());}});
+return out.join('\n\n');}
+async function copyAll(){var txt=collect()||'(комментариев нет)';
+try{await navigator.clipboard.writeText(txt);alert('Скопировано: '+txt.split('\n\n').length+' коммент.');}
+catch(e){var ta=document.createElement('textarea');ta.value=txt;document.body.appendChild(ta);ta.select();
+try{document.execCommand('copy');alert('Скопировано (fallback).');}catch(e2){document.getElementById('mtext').value=txt;document.getElementById('modal').style.display='block';}
+ta.remove();}}
+function backup(){var all={};document.querySelectorAll('textarea[data-k]').forEach(t=>{if(t.value)all[t.dataset.k]=t.value;});
+var blob=new Blob([JSON.stringify(all,null,1)],{type:'application/json'});var a=document.createElement('a');
+a.href=URL.createObjectURL(blob);a.download='thumb_audit_comments.json';a.click();}
+</script></body></html>
